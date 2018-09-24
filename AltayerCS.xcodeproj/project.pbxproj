@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EE8215920240052CC86 /* AppDelegate.swift */; };
-		889E4EEB215920240052CC86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EEA215920240052CC86 /* ViewController.swift */; };
+		889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EEA215920240052CC86 /* BaseViewController.swift */; };
 		889E4EEE215920240052CC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EEC215920240052CC86 /* Main.storyboard */; };
 		889E4EF0215920250052CC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EEF215920250052CC86 /* Assets.xcassets */; };
 		889E4EF3215920250052CC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EF1215920250052CC86 /* LaunchScreen.storyboard */; };
 		889E4EFE215920260052CC86 /* AltayerCSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EFD215920260052CC86 /* AltayerCSTests.swift */; };
 		889E4F09215920260052CC86 /* AltayerCSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F08215920260052CC86 /* AltayerCSUITests.swift */; };
+		889E4F1C2159226E0052CC86 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F1B2159226E0052CC86 /* ProductsViewController.swift */; };
+		889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F1D2159227B0052CC86 /* ProductDetailViewController.swift */; };
+		889E4F21215923B60052CC86 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F20215923B60052CC86 /* ProductsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		889E4EE5215920240052CC86 /* AltayerCS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltayerCS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4EE8215920240052CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		889E4EEA215920240052CC86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		889E4EEA215920240052CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		889E4EED215920240052CC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		889E4EEF215920250052CC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		889E4EF2215920250052CC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		889E4F04215920260052CC86 /* AltayerCSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AltayerCSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4F08215920260052CC86 /* AltayerCSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltayerCSUITests.swift; sourceTree = "<group>"; };
 		889E4F0A215920260052CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		889E4F1B2159226E0052CC86 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		889E4F1D2159227B0052CC86 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		889E4F20215923B60052CC86 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,13 @@
 			isa = PBXGroup;
 			children = (
 				889E4EE8215920240052CC86 /* AppDelegate.swift */,
-				889E4EEA215920240052CC86 /* ViewController.swift */,
-				889E4EEC215920240052CC86 /* Main.storyboard */,
-				889E4EEF215920250052CC86 /* Assets.xcassets */,
-				889E4EF1215920250052CC86 /* LaunchScreen.storyboard */,
 				889E4EF4215920250052CC86 /* Info.plist */,
+				889E4EEF215920250052CC86 /* Assets.xcassets */,
+				889E4F18215921D70052CC86 /* Network */,
+				889E4F17215921CA0052CC86 /* ViewModels */,
+				889E4F1A215921EF0052CC86 /* Storyboards */,
+				889E4F19215921E30052CC86 /* ViewControllers */,
+				889E4F1F2159236B0052CC86 /* Views */,
 			);
 			path = AltayerCS;
 			sourceTree = "<group>";
@@ -123,6 +131,87 @@
 				889E4F0A215920260052CC86 /* Info.plist */,
 			);
 			path = AltayerCSUITests;
+			sourceTree = "<group>";
+		};
+		889E4F16215920E90052CC86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				889E4F222159262A0052CC86 /* Requests */,
+				889E4F23215926370052CC86 /* Responses */,
+				889E4F242159269B0052CC86 /* Commons */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		889E4F17215921CA0052CC86 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				889E4F20215923B60052CC86 /* ProductsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		889E4F18215921D70052CC86 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				889E4F16215920E90052CC86 /* Models */,
+				889E4F25215926B20052CC86 /* Services */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		889E4F19215921E30052CC86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				889E4EEA215920240052CC86 /* BaseViewController.swift */,
+				889E4F1B2159226E0052CC86 /* ProductsViewController.swift */,
+				889E4F1D2159227B0052CC86 /* ProductDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		889E4F1A215921EF0052CC86 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				889E4EF1215920250052CC86 /* LaunchScreen.storyboard */,
+				889E4EEC215920240052CC86 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		889E4F1F2159236B0052CC86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		889E4F222159262A0052CC86 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		889E4F23215926370052CC86 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		889E4F242159269B0052CC86 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		889E4F25215926B20052CC86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +345,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				889E4EEB215920240052CC86 /* ViewController.swift in Sources */,
+				889E4F1C2159226E0052CC86 /* ProductsViewController.swift in Sources */,
+				889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */,
+				889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */,
+				889E4F21215923B60052CC86 /* ProductsViewModel.swift in Sources */,
 				889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
