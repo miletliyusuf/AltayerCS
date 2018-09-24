@@ -7,6 +7,7 @@ target 'AltayerCS' do
 
   # Pods for AltayerCS
   pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
   pod 'RxSwift'
   pod 'Kingfisher'
 
