@@ -57,32 +57,30 @@ class BaseRequest: Mappable {
       let method: HTTPMethod = self.reqEndPointAndType().1
       let params: Parameters = self.requestJson()
 
-      var req = URLRequest(url: url)
-      req.httpMethod = method.rawValue
-      req.allHTTPHeaderFields = header
+      let r = Alamofire.request(url,
+                                method: method,
+                                parameters: params,
+                                encoding: URLEncoding.default,
+                                headers: header)
+        .validate(statusCode: 200..<300)
+        .responseData{ response in
 
-      if params.count > 0 {
-        req.httpBody = try? JSONSerialization.data(withJSONObject: params)
-      }
-
-      let r = Alamofire.request(req).validate(statusCode: 200..<300).responseData{ response in
-
-        switch response.result {
-        case .success:
-          if let data = response.data,
-            let utf8Text: String = String(data: data, encoding: .utf8) {
-            let responseClass: BaseResponse.Type = self.responseModel()
-            let obj = responseClass.newInstance(utf8Text)
-            observer.onNext(obj)
-            observer.onCompleted()
-          } else {
-            observer.onError(ApiManagerError(error: response.error, message: "Failed to encode data!"))
+          switch response.result {
+          case .success:
+            if let data = response.data,
+              let utf8Text: String = String(data: data, encoding: .utf8) {
+              let responseClass: BaseResponse.Type = self.responseModel()
+              let obj = responseClass.newInstance(utf8Text)
+              observer.onNext(obj)
+              observer.onCompleted()
+            } else {
+              observer.onError(ApiManagerError(error: response.error, message: "Failed to encode data!"))
+              observer.onCompleted()
+            }
+          case .failure:
+            observer.onError(ApiManagerError(error: response.error, message: response.error?.localizedDescription))
             observer.onCompleted()
           }
-        case .failure:
-          observer.onError(ApiManagerError(error: response.error, message: response.error?.localizedDescription))
-          observer.onCompleted()
-        }
       }
 
       return Disposables.create(with: { r.cancel() })

@@ -12,7 +12,7 @@ class ProductsRequest: BaseRequest {
   override func mapping(map: Map) {
     super.mapping(map: map)
 
-    page <- map["page"]
+    page <- map["p"]
   }
 
   override func responseModel() -> BaseResponse.Type {
