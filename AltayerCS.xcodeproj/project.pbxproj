@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557869236FD3F57D10374256 /* Pods_AltayerCSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5246BEF65F48F62443145BB /* Pods_AltayerCSTests.framework */; };
+		6DC150CF5726008568B0BEBB /* Pods_AltayerCSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64430B7A9C1DD6019C6D5AF9 /* Pods_AltayerCSUITests.framework */; };
 		889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EE8215920240052CC86 /* AppDelegate.swift */; };
 		889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EEA215920240052CC86 /* BaseViewController.swift */; };
 		889E4EEE215920240052CC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EEC215920240052CC86 /* Main.storyboard */; };
@@ -17,6 +19,7 @@
 		889E4F1C2159226E0052CC86 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F1B2159226E0052CC86 /* ProductsViewController.swift */; };
 		889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F1D2159227B0052CC86 /* ProductDetailViewController.swift */; };
 		889E4F21215923B60052CC86 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F20215923B60052CC86 /* ProductsViewModel.swift */; };
+		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35E361654E5CDDB676CF10F1 /* Pods-AltayerCSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3ACE61BD0BD254EAA24348C8 /* Pods-AltayerCS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.debug.xcconfig"; sourceTree = "<group>"; };
+		42EAA723925ADE45C4EC64D4 /* Pods-AltayerCSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.release.xcconfig"; sourceTree = "<group>"; };
+		64430B7A9C1DD6019C6D5AF9 /* Pods_AltayerCSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltayerCSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltayerCS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4EE5215920240052CC86 /* AltayerCS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltayerCS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4EE8215920240052CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889E4EEA215920240052CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +61,10 @@
 		889E4F1B2159226E0052CC86 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		889E4F1D2159227B0052CC86 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		889E4F20215923B60052CC86 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
+		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D5246BEF65F48F62443145BB /* Pods_AltayerCSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltayerCSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557869236FD3F57D10374256 /* Pods_AltayerCSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC150CF5726008568B0BEBB /* Pods_AltayerCSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E777C7C247DA3714CA2B0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3ACE61BD0BD254EAA24348C8 /* Pods-AltayerCS.debug.xcconfig */,
+				C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */,
+				A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */,
+				42EAA723925ADE45C4EC64D4 /* Pods-AltayerCSTests.release.xcconfig */,
+				35E361654E5CDDB676CF10F1 /* Pods-AltayerCSUITests.debug.xcconfig */,
+				C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75E98F4609AF0186F3379D0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */,
+				D5246BEF65F48F62443145BB /* Pods_AltayerCSTests.framework */,
+				64430B7A9C1DD6019C6D5AF9 /* Pods_AltayerCSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		889E4EDC215920240052CC86 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +125,8 @@
 				889E4EFC215920260052CC86 /* AltayerCSTests */,
 				889E4F07215920260052CC86 /* AltayerCSUITests */,
 				889E4EE6215920240052CC86 /* Products */,
+				10E777C7C247DA3714CA2B0C /* Pods */,
+				75E98F4609AF0186F3379D0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 889E4F0D215920260052CC86 /* Build configuration list for PBXNativeTarget "AltayerCS" */;
 			buildPhases = (
+				EC566379A845922B0089CBD6 /* [CP] Check Pods Manifest.lock */,
 				889E4EE1215920240052CC86 /* Sources */,
 				889E4EE2215920240052CC86 /* Frameworks */,
 				889E4EE3215920240052CC86 /* Resources */,
+				AB5DBC7938DA31A4E859873C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 889E4F10215920260052CC86 /* Build configuration list for PBXNativeTarget "AltayerCSTests" */;
 			buildPhases = (
+				61B4DFB56F2C014EC8F33B24 /* [CP] Check Pods Manifest.lock */,
 				889E4EF5215920260052CC86 /* Sources */,
 				889E4EF6215920260052CC86 /* Frameworks */,
 				889E4EF7215920260052CC86 /* Resources */,
@@ -256,6 +299,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 889E4F13215920260052CC86 /* Build configuration list for PBXNativeTarget "AltayerCSUITests" */;
 			buildPhases = (
+				0654E89BE6741498E6BCB9D9 /* [CP] Check Pods Manifest.lock */,
 				889E4F00215920260052CC86 /* Sources */,
 				889E4F01215920260052CC86 /* Frameworks */,
 				889E4F02215920260052CC86 /* Resources */,
@@ -339,6 +383,85 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0654E89BE6741498E6BCB9D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AltayerCSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61B4DFB56F2C014EC8F33B24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AltayerCSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB5DBC7938DA31A4E859873C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC566379A845922B0089CBD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AltayerCS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		889E4EE1215920240052CC86 /* Sources */ = {
@@ -522,6 +645,7 @@
 		};
 		889E4F0E215920260052CC86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ACE61BD0BD254EAA24348C8 /* Pods-AltayerCS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +665,7 @@
 		};
 		889E4F0F215920260052CC86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +685,7 @@
 		};
 		889E4F11215920260052CC86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -581,6 +707,7 @@
 		};
 		889E4F12215920260052CC86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42EAA723925ADE45C4EC64D4 /* Pods-AltayerCSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -602,6 +729,7 @@
 		};
 		889E4F14215920260052CC86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35E361654E5CDDB676CF10F1 /* Pods-AltayerCSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,6 +750,7 @@
 		};
 		889E4F15215920260052CC86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
