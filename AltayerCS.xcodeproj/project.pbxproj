@@ -11,6 +11,7 @@
 		6DC150CF5726008568B0BEBB /* Pods_AltayerCSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64430B7A9C1DD6019C6D5AF9 /* Pods_AltayerCSUITests.framework */; };
 		881C9E002159758000893E8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9DFF2159758000893E8C /* Extensions.swift */; };
 		881C9E02215A75F600893E8C /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E01215A75F600893E8C /* ProductsViewModelTests.swift */; };
+		881C9E04215A868600893E8C /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E03215A868600893E8C /* BadgeModel.swift */; };
 		889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EE8215920240052CC86 /* AppDelegate.swift */; };
 		889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EEA215920240052CC86 /* BaseViewController.swift */; };
 		889E4EEE215920240052CC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EEC215920240052CC86 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltayerCS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		881C9DFF2159758000893E8C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		881C9E01215A75F600893E8C /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
+		881C9E03215A868600893E8C /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
 		889E4EE5215920240052CC86 /* AltayerCS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltayerCS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4EE8215920240052CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889E4EEA215920240052CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				889E4F41215962C10052CC86 /* OptionModel.swift */,
 				889E4F43215963270052CC86 /* AttributeSpecificPropertiesModel.swift */,
 				889E4F45215966B00052CC86 /* CarouselModel.swift */,
+				881C9E03215A868600893E8C /* BadgeModel.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				889E4F402159626B0052CC86 /* ConfigurableAttributeModel.swift in Sources */,
 				889E4F3421594F920052CC86 /* ProductsResponse.swift in Sources */,
 				889E4F4B215970440052CC86 /* ProductCollectionViewCell.swift in Sources */,
+				881C9E04215A868600893E8C /* BadgeModel.swift in Sources */,
 				889E4F44215963270052CC86 /* AttributeSpecificPropertiesModel.swift in Sources */,
 				889E4F2E21593F6A0052CC86 /* Config.swift in Sources */,
 				889E4F21215923B60052CC86 /* ProductsViewModel.swift in Sources */,

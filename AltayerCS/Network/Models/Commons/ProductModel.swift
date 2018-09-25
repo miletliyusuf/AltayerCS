@@ -1,5 +1,10 @@
 import ObjectMapper
 
+enum Discounted: String {
+  case yes
+  case no
+}
+
 class ProductModel: BaseModel {
 
   var routeType: String?
@@ -12,6 +17,7 @@ class ProductModel: BaseModel {
   var countryOfOrigin: String?
   var motherReference: String?
   var slug: String?
+  var badges: [BadgeModel]?
   var extraBadges: [String]?
   var sizeAndFit: String?
   var image: String?
@@ -41,7 +47,7 @@ class ProductModel: BaseModel {
   var recommendationCategoryNamesEN: [String]?
   var designerCategoryName: String?
   var designerCategoryURL: String?
-  var discounted: String?
+  var discounted: Discounted?
   var isClearance: Bool?
   var isPromotion: Int?
   var configurableAttributes: [ConfigurableAttributeModel]?
@@ -75,6 +81,7 @@ class ProductModel: BaseModel {
     countryOfOrigin <- map["countryOfOrigin"]
     motherReference <- map["motherReference"]
     slug <- map["slug"]
+    badges <- map["badges"]
     extraBadges <- map["extraBadges"]
     sizeAndFit <- map["sizeAndFit"]
     image <- map["image"]

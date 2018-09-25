@@ -8,6 +8,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var designerCategoryNameLabel: UILabel?
   @IBOutlet weak var nameLabel: UILabel?
   @IBOutlet weak var priceLabel: UILabel?
+  @IBOutlet weak var discountLabel: UILabel?
 
   /// Sets cell UI for given data
   ///
@@ -20,6 +21,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     self.nameLabel?.text = data.name
     if let price = data.price {
       self.priceLabel?.text = "AED \(price)"
+    }
+    if let discountBadge: BadgeModel = data.badges?.first {
+      self.discountLabel?.isHidden = data.discounted == .no
+      self.discountLabel?.text = discountBadge.value
     }
   }
 }
