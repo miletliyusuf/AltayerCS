@@ -10,6 +10,7 @@
 		557869236FD3F57D10374256 /* Pods_AltayerCSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5246BEF65F48F62443145BB /* Pods_AltayerCSTests.framework */; };
 		6DC150CF5726008568B0BEBB /* Pods_AltayerCSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64430B7A9C1DD6019C6D5AF9 /* Pods_AltayerCSUITests.framework */; };
 		881C9E002159758000893E8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9DFF2159758000893E8C /* Extensions.swift */; };
+		881C9E02215A75F600893E8C /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E01215A75F600893E8C /* ProductsViewModelTests.swift */; };
 		889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EE8215920240052CC86 /* AppDelegate.swift */; };
 		889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EEA215920240052CC86 /* BaseViewController.swift */; };
 		889E4EEE215920240052CC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EEC215920240052CC86 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		64430B7A9C1DD6019C6D5AF9 /* Pods_AltayerCSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltayerCSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltayerCS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		881C9DFF2159758000893E8C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		881C9E01215A75F600893E8C /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
 		889E4EE5215920240052CC86 /* AltayerCS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltayerCS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4EE8215920240052CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889E4EEA215920240052CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		889E4EFC215920260052CC86 /* AltayerCSTests */ = {
 			isa = PBXGroup;
 			children = (
+				881C9E01215A75F600893E8C /* ProductsViewModelTests.swift */,
 				889E4EFD215920260052CC86 /* AltayerCSTests.swift */,
 				889E4EFF215920260052CC86 /* Info.plist */,
 			);
@@ -568,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881C9E02215A75F600893E8C /* ProductsViewModelTests.swift in Sources */,
 				889E4EFE215920260052CC86 /* AltayerCSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
