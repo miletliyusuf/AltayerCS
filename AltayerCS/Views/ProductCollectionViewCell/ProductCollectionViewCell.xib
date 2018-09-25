@@ -48,7 +48,7 @@
                     </label>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5ja-0w-d8t">
                         <rect key="frame" x="0.0" y="241" width="93.5" height="30"/>
-                        <color key="backgroundColor" red="1" green="0.2901960784" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="qKf-ED-UaJ"/>
                         </constraints>
