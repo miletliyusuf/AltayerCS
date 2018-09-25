@@ -16,6 +16,7 @@ class ProductsViewController: BaseViewController {
 
   private let productCellIdentifierId: String = "ProductCollectionViewCell"
   private let footerId: String = "ProductsCollectionViewFooterId"
+  private let productDetailVCIdentifier: String = "ProductDetailViewController"
 
   private let refreshController = UIRefreshControl()
 
@@ -93,7 +94,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    if let cell: ProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: productCellIdentifierId, for: indexPath) as? ProductCollectionViewCell {
+    if let cell: ProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.productCellIdentifierId, for: indexPath) as? ProductCollectionViewCell {
       let hit: ProductModel = self.hits[indexPath.row]
       cell.setData(for: hit)
       return cell
@@ -107,6 +108,10 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     // Navigate to detail
+    if let vc: ProductDetailViewController = UIStoryboard.main.instantiateViewController(withIdentifier: self.productDetailVCIdentifier) as? ProductDetailViewController {
+      vc.product = self.hits[indexPath.row]
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -122,8 +127,8 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     if kind == UICollectionElementKindSectionFooter {
       let footerView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter,
-                                                                                           withReuseIdentifier: self.footerId,
-                                                                                           for: indexPath)
+                                                                                                 withReuseIdentifier: self.footerId,
+                                                                                                 for: indexPath)
       let activityIndicator = UIActivityIndicatorView(frame: footerView.frame)
       activityIndicator.color = .gray
       activityIndicator.startAnimating()

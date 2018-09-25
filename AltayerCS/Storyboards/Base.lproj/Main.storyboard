@@ -28,16 +28,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mPO-tc-JYr">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,6 +48,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="810" y="-564"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="AvB-KZ-wOc">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JnS-Oa-vlq" customClass="ProductDetailViewController" customModule="AltayerCS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ob1-YC-1Tb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-Hm-Cdi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SaN-Hm-Cdi" firstAttribute="top" secondItem="zwc-jq-8aV" secondAttribute="top" id="4W6-Qb-yH7"/>
+                            <constraint firstItem="zwc-jq-8aV" firstAttribute="trailing" secondItem="SaN-Hm-Cdi" secondAttribute="trailing" id="7xe-AS-5ao"/>
+                            <constraint firstItem="zwc-jq-8aV" firstAttribute="bottom" secondItem="SaN-Hm-Cdi" secondAttribute="bottom" id="RCD-eV-eOK"/>
+                            <constraint firstItem="SaN-Hm-Cdi" firstAttribute="leading" secondItem="zwc-jq-8aV" secondAttribute="leading" id="ndS-64-WXx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zwc-jq-8aV"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="SaN-Hm-Cdi" id="H5D-kU-8Vd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2r-qR-KnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PyT-Rj-5dr">
