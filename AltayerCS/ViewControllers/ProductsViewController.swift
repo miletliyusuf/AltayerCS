@@ -86,8 +86,8 @@ class ProductsViewController: BaseViewController {
   /// Fetchs data for page and reloads UI.
   ///
   /// - Parameter page: Instant page
-  func fetchProducts(for page: Int) {
-    LoadingView.showActivityIndicator()
+  func fetchProducts(for page: Int, isInfiniteOrPullToRefresh: Bool = false) {
+    if !isInfiniteOrPullToRefresh { LoadingView.showActivityIndicator() }
     let r: ProductsRequest = ProductsRequest()
     r.page = page
     r.fields = "hits,pagination"
@@ -101,15 +101,18 @@ class ProductsViewController: BaseViewController {
           self.page += 1
         })
       }
-      LoadingView.hideActivityIndicator()
+      if !isInfiniteOrPullToRefresh { LoadingView.hideActivityIndicator() }
     }, onError: { (error) in
-      LoadingView.hideActivityIndicator()
+      if !isInfiniteOrPullToRefresh { LoadingView.hideActivityIndicator() }
       super.addAlertAction(title: "Error", message: error.localizedDescription, defaultTitle: "Okay")
     })
   }
 
+  /// Pull to refresh controller action
+  ///
+  /// - Parameter sender: Any
   @objc func refreshControllerValueChanged(_ sender: Any) {
-    self.fetchProducts(for: 0)
+    self.fetchProducts(for: 0, isInfiniteOrPullToRefresh: true)
   }
 }
 
@@ -147,7 +150,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     // Start fetching data when last item of collectionview about to appear
     if self.hits.count - 1 == indexPath.row {
-      self.fetchProducts(for: self.page)
+      self.fetchProducts(for: self.page, isInfiniteOrPullToRefresh: true)
     }
   }
 
