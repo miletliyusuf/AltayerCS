@@ -10,5 +10,6 @@ class PDConfigColorCollectionViewCell: UICollectionViewCell {
     guard let thumbnail: String = option.attributeSpecificProperties?.productThumbnail,
       let url: URL = URL(string: Config.detailImageBaseUrl + thumbnail) else { return }
     self.imageView?.kf.setImage(with: url)
+    self.setVisibilityOfOption(for: option.isInStock == true)
   }
 }

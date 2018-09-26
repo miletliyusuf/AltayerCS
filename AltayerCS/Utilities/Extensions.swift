@@ -22,6 +22,13 @@ extension UICollectionView {
   }
 }
 
+extension UICollectionViewCell {
+  func setVisibilityOfOption(for state: Bool) {
+    self.isUserInteractionEnabled = state
+    self.alpha = state ? 1.0 : 0.3
+  }
+}
+
 // MARK: - UIStoryboard
 extension UIStoryboard {
   static var main: UIStoryboard {

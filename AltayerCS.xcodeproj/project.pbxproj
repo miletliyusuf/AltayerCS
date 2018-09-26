@@ -227,8 +227,8 @@
 		881C9E0A215AC4DE00893E8C /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				881C9E05215AC32D00893E8C /* PDImageTableViewCell */,
 				881C9E4A215AF0B600893E8C /* PDConfigSelectionView */,
+				881C9E05215AC32D00893E8C /* PDImageTableViewCell */,
 				881C9E0B215AC4F900893E8C /* PDDescriptionTableViewCell */,
 				881C9E10215AC8E500893E8C /* PDConfigAttributesTableViewCell */,
 				881C9E11215ACA3000893E8C /* PDAddToBagFooterView */,

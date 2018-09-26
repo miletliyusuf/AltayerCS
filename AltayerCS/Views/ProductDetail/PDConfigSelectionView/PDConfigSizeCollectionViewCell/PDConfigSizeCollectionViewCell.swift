@@ -21,5 +21,6 @@ class PDConfigSizeCollectionViewCell: UICollectionViewCell {
 
   func setData(for option: OptionModel) {
     self.sizeLabel?.text = option.label
+    self.setVisibilityOfOption(for: option.isInStock == true)
   }
 }

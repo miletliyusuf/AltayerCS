@@ -10,7 +10,9 @@ class PDConfigAttributesTableViewCell: UITableViewCell {
   @IBOutlet weak var colorSelectionButton: UIButton?
   @IBOutlet weak var colorView: UIView?
   @IBOutlet weak var colorLabel: UILabel?
+  @IBOutlet weak var colorDownArrowImageView: UIImageView?
   @IBOutlet weak var sizeSelectionButton: UIButton?
+  @IBOutlet weak var sizeDownArrowImageView: UIImageView?
   @IBOutlet weak var chooseLabel: UILabel?
 
   var delegate: PDConfigAttributesTableViewCellDelegate? = nil
@@ -19,8 +21,13 @@ class PDConfigAttributesTableViewCell: UITableViewCell {
   func setData(for product: ProductResponseModel?, selectedOption: OptionModel?, key: ConfigCode?) {
 //    self.colorView?.backgroundColor = product?.colorId // I guess it should request somewhere with this id. I couldn't see in doc.
     self.colorLabel?.text = product?.color
-    self.colorSelectionButton?.isUserInteractionEnabled = self.isColorSelectionEnable(for: product)
-    self.sizeSelectionButton?.isUserInteractionEnabled = self.isSizeSelectionEnable(for: product)
+    let isColorSelectionEnable: Bool = self.isColorSelectionEnable(for: product)
+    let isSizeSelectionEnable: Bool = self.isSizeSelectionEnable(for: product)
+
+    self.colorSelectionButton?.isUserInteractionEnabled = isColorSelectionEnable
+    self.colorDownArrowImageView?.isHidden = !isColorSelectionEnable
+    self.sizeSelectionButton?.isUserInteractionEnabled = isSizeSelectionEnable
+    self.sizeDownArrowImageView?.isHidden = !isSizeSelectionEnable
     if let key: ConfigCode = key,
       key == .sizeCode,
       let option: OptionModel = selectedOption {

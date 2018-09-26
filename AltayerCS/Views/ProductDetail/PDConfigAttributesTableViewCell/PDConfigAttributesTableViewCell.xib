@@ -54,12 +54,17 @@
                                     <action selector="didColorButtonTapped:" destination="DWb-cR-wHU" eventType="touchUpInside" id="mEt-as-Yo9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-EI-M6j">
+                                <rect key="frame" x="166" y="26.5" width="25" height="25"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WYV-EI-M6j" secondAttribute="trailing" constant="8.5" id="0rC-fJ-MEb"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dbK-DK-U3M" secondAttribute="trailing" id="AGT-T6-V8N"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dbK-DK-U3M" secondAttribute="bottom" id="FTx-IQ-3Cc"/>
                             <constraint firstItem="dbK-DK-U3M" firstAttribute="top" secondItem="61W-DU-S4g" secondAttribute="bottom" constant="10" id="I95-h9-gur"/>
+                            <constraint firstItem="WYV-EI-M6j" firstAttribute="centerY" secondItem="K8a-wY-Riv" secondAttribute="centerY" id="R12-WO-eMg"/>
                             <constraint firstItem="61W-DU-S4g" firstAttribute="leading" secondItem="K8a-wY-Riv" secondAttribute="leading" constant="8" id="Teb-Lf-v0I"/>
                             <constraint firstItem="yxU-Sv-6iX" firstAttribute="leading" secondItem="K8a-wY-Riv" secondAttribute="leading" id="Txw-tD-yzm"/>
                             <constraint firstItem="yxU-Sv-6iX" firstAttribute="top" secondItem="K8a-wY-Riv" secondAttribute="top" id="Utv-Sh-X8I"/>
@@ -95,11 +100,16 @@
                                     <action selector="didSizeButtonTapped:" destination="DWb-cR-wHU" eventType="touchUpInside" id="H8I-20-7PT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-a3-Kur">
+                                <rect key="frame" x="166.5" y="26.5" width="25" height="25"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rtf-a3-Kur" secondAttribute="trailing" constant="8" id="1ej-BE-qve"/>
                             <constraint firstAttribute="trailing" secondItem="jbR-Bm-Rjq" secondAttribute="trailing" id="DdU-pW-Zgv"/>
                             <constraint firstItem="Qi1-2g-JKY" firstAttribute="leading" secondItem="SKE-wa-t8S" secondAttribute="leading" constant="8" id="IjK-yg-OoZ"/>
+                            <constraint firstItem="rtf-a3-Kur" firstAttribute="centerY" secondItem="SKE-wa-t8S" secondAttribute="centerY" id="RKm-IG-dNg"/>
                             <constraint firstItem="jbR-Bm-Rjq" firstAttribute="top" secondItem="SKE-wa-t8S" secondAttribute="top" id="U6V-gq-d4S"/>
                             <constraint firstAttribute="bottom" secondItem="jbR-Bm-Rjq" secondAttribute="bottom" id="VBc-mf-IRH"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1pm-i9-epW" secondAttribute="trailing" id="d7f-M3-OO7"/>
@@ -124,12 +134,17 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="chooseLabel" destination="1pm-i9-epW" id="V43-B1-n91"/>
+                <outlet property="colorDownArrowImageView" destination="WYV-EI-M6j" id="aLT-bW-trI"/>
                 <outlet property="colorLabel" destination="dbK-DK-U3M" id="oW9-qD-yc6"/>
                 <outlet property="colorSelectionButton" destination="yxU-Sv-6iX" id="06X-Y5-eCK"/>
                 <outlet property="colorView" destination="hF3-5Y-dc2" id="tNE-mX-d56"/>
+                <outlet property="sizeDownArrowImageView" destination="rtf-a3-Kur" id="Xnz-fh-2UQ"/>
                 <outlet property="sizeSelectionButton" destination="jbR-Bm-Rjq" id="gKS-EH-U2C"/>
             </connections>
             <point key="canvasLocation" x="73.599999999999994" y="64.767616191904054"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="downArrow" width="25" height="25"/>
+    </resources>
 </document>
