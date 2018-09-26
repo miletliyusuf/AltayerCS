@@ -31,6 +31,7 @@ class PDRelatedTableViewCell: UITableViewCell {
     self.products = products
     self.collectionView?.reloadData()
   }
+
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout

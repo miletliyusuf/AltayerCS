@@ -7,7 +7,7 @@ enum ProductDetailHeights: CGFloat {
   case footerView = 90.0
   case attributeCellClose = 70
   case attributeCellOpen = 200
-  case relatedCell = 300
+  case relatedCell = 400
 
   public subscript() -> CGFloat {
     return self.rawValue

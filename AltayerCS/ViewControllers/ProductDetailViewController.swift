@@ -68,7 +68,7 @@ class ProductDetailViewController: BaseViewController {
         ProductDetailHeights.configCell[]
       ],
       1: [
-        ProductDetailHeights.attributeCellClose[],
+        ProductDetailHeights.attributeCellOpen[],
         ProductDetailHeights.attributeCellClose[],
         ProductDetailHeights.attributeCellClose[],
       ],
@@ -131,7 +131,11 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
     case 2:
       if let cell: PDRelatedTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdRelatedTableViewCellIdentifier, for: indexPath) as? PDRelatedTableViewCell {
         if let products = self.product?.relatedProductsLookup?.values.reversed() {
-          cell.setData(for: products)
+          // Should be in main thread. Otherwise, collectionView will not load cell data.
+          DispatchQueue.main.async {
+            cell.setData(for: products)
+            cell.delegate = self
+          }
         }
         return cell
       }
@@ -200,5 +204,16 @@ extension ProductDetailViewController: PDConfigSelectionViewDelegate {
 
   func didDoneButtonTapped() {
     self.willShowConfigView(status: false)
+  }
+}
+
+// MARK: - PDRelatedTableViewCellDelegate
+extension ProductDetailViewController: PDRelatedTableViewCellDelegate {
+  func didSelectProduct(product: ProductResponseModel) {
+    // Navigate to detail as a new vc
+    if let vc: ProductDetailViewController = UIStoryboard.main.instantiateViewController(withIdentifier: ProductsViewModel().productDetailVCIdentifier) as? ProductDetailViewController {
+      vc.product = product
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
   }
 }
