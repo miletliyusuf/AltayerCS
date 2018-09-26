@@ -46,6 +46,7 @@ class ProductDetailViewController: BaseViewController {
   }
 
   func fetchProduct(for slug: String) {
+    LoadingView.showActivityIndicator()
     let r: ProductRequest = ProductRequest()
     r.slug = slug
     _ = ProductsDataService.product(req: r).subscribe(onNext: { (response) in
@@ -54,8 +55,10 @@ class ProductDetailViewController: BaseViewController {
         self.tableView?.reloadData()
         self.configSelectionView?.product = self.product
       }
+      LoadingView.hideActivityIndicator()
     }, onError: { (error) in
-
+      LoadingView.hideActivityIndicator()
+      super.addAlertAction(title: "Error", message: error.localizedDescription, defaultTitle: "Okay")
     })
   }
 

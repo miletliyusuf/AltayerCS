@@ -87,6 +87,7 @@ class ProductsViewController: BaseViewController {
   ///
   /// - Parameter page: Instant page
   func fetchProducts(for page: Int) {
+    LoadingView.showActivityIndicator()
     let r: ProductsRequest = ProductsRequest()
     r.page = page
     r.fields = "hits,pagination"
@@ -100,8 +101,10 @@ class ProductsViewController: BaseViewController {
           self.page += 1
         })
       }
+      LoadingView.hideActivityIndicator()
     }, onError: { (error) in
-
+      LoadingView.hideActivityIndicator()
+      super.addAlertAction(title: "Error", message: error.localizedDescription, defaultTitle: "Okay")
     })
   }
 
