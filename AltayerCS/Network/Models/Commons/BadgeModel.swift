@@ -18,4 +18,3 @@ class BadgeModel: BaseModel {
     value <- map["value"]
   }
 }
-

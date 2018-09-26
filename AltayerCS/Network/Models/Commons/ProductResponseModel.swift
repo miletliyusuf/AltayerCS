@@ -135,7 +135,7 @@ class ProductResponseModel: BaseResponse {
     stdSizeCode <- map["stdSizeCode"]
   }
 
-  override class func newInstance(_ jsonString: String)-> AnyObject? {
+  override class func newInstance(_ jsonString: String) -> AnyObject? {
     return Mapper<ProductResponseModel>().map(JSONString: jsonString)
   }
 }

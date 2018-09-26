@@ -7,6 +7,7 @@ class PDDescriptionTableViewCell: UITableViewCell {
   @IBOutlet weak var nameLabel: UILabel?
   @IBOutlet weak var priceLabel: UILabel?
   @IBOutlet weak var vatInfoLabel: UILabel?
+  @IBOutlet weak var amberLabel: UILabel?
 
   let viewModel: ProductDetailViewModel = ProductDetailViewModel()
 
@@ -20,5 +21,8 @@ class PDDescriptionTableViewCell: UITableViewCell {
       self.priceLabel?.text = "\(Config.currency) \(product?.price ?? 0)"
     }
     self.vatInfoLabel?.text = product?.vatInfo
+    if let amberPoint = product?.amberPointsPerItem {
+      self.amberLabel?.text = "Earn \(amberPoint) Amber Points"
+    }
   }
 }

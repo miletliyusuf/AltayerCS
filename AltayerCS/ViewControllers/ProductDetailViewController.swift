@@ -49,11 +49,10 @@ class ProductDetailViewController: BaseViewController {
     let r: ProductRequest = ProductRequest()
     r.slug = slug
     _ = ProductsDataService.product(req: r).subscribe(onNext: { (response) in
-      if let res: ProductResponseModel = response as? ProductResponseModel,
-        let configs: [ConfigurableAttributeModel] = res.configurableAttributes {
+      if let res: ProductResponseModel = response as? ProductResponseModel {
         self.product = res
         self.tableView?.reloadData()
-        self.configSelectionView?.configs = configs
+        self.configSelectionView?.product = self.product
       }
     }, onError: { (error) in
 
@@ -189,7 +188,11 @@ extension ProductDetailViewController: PDConfigAttributesTableViewCellDelegate {
 // MARK: - PDAddToBagFooterViewDelegate
 extension ProductDetailViewController: PDAddToBagFooterViewDelegate {
   func didAddToBagButtonTapped() {
-    print("Add to bag item ->", self.product)
+    self.willShowConfigView(status: true)
+
+    if let sku = self.product?.sku {
+      self.fetchProduct(for: sku)
+    }
   }
 }
 
@@ -204,6 +207,10 @@ extension ProductDetailViewController: PDConfigSelectionViewDelegate {
   }
 
   func didDoneButtonTapped() {
+    self.willShowConfigView(status: false)
+  }
+
+  func didAddToBagButtonTappedFromConfigSelection() {
     self.willShowConfigView(status: false)
   }
 }

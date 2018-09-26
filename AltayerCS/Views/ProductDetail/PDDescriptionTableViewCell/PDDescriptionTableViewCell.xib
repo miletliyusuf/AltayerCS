@@ -49,6 +49,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qf-x8-Fc5">
+                        <rect key="frame" x="0.0" y="130.5" width="375" height="40"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="mhC-ls-z1u"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="0zg-Ca-08O" secondAttribute="trailing" id="38d-D3-LhM"/>
@@ -58,19 +68,23 @@
                     <constraint firstItem="Lh2-an-X86" firstAttribute="top" secondItem="0zg-Ca-08O" secondAttribute="bottom" constant="5" id="6Y5-CV-MO6"/>
                     <constraint firstItem="Lh2-an-X86" firstAttribute="height" secondItem="EWQ-DE-jZt" secondAttribute="height" id="7Ri-lR-bUP"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="47V-dG-tmG" secondAttribute="trailing" id="FEL-dW-TTH"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="47V-dG-tmG" secondAttribute="bottom" id="JgF-6x-QrN"/>
                     <constraint firstAttribute="trailingMargin" secondItem="yRZ-8q-5jV" secondAttribute="trailing" id="L02-9u-a5r"/>
                     <constraint firstItem="Lh2-an-X86" firstAttribute="leading" secondItem="EWQ-DE-jZt" secondAttribute="trailing" constant="15" id="NuQ-Mr-za4"/>
+                    <constraint firstAttribute="trailing" secondItem="1Qf-x8-Fc5" secondAttribute="trailing" id="R3o-0Z-fhh"/>
+                    <constraint firstAttribute="bottom" secondItem="1Qf-x8-Fc5" secondAttribute="bottom" id="UE0-NN-OfF"/>
+                    <constraint firstItem="1Qf-x8-Fc5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Lh2-an-X86" secondAttribute="bottom" id="bgv-og-HaV"/>
+                    <constraint firstItem="1Qf-x8-Fc5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EWQ-DE-jZt" secondAttribute="bottom" id="dKQ-I6-e75"/>
+                    <constraint firstItem="1Qf-x8-Fc5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="47V-dG-tmG" secondAttribute="bottom" id="dc6-3a-Wqn"/>
                     <constraint firstItem="yRZ-8q-5jV" firstAttribute="leading" secondItem="JvN-4s-H8z" secondAttribute="leadingMargin" id="dwH-iM-G7a"/>
                     <constraint firstItem="47V-dG-tmG" firstAttribute="leading" secondItem="Lh2-an-X86" secondAttribute="trailing" constant="5" id="fMd-10-rz7"/>
                     <constraint firstItem="EWQ-DE-jZt" firstAttribute="top" secondItem="0zg-Ca-08O" secondAttribute="bottom" constant="5" id="s8c-wC-eK4"/>
+                    <constraint firstItem="1Qf-x8-Fc5" firstAttribute="leading" secondItem="JvN-4s-H8z" secondAttribute="leading" id="sNJ-ny-7bj"/>
                     <constraint firstItem="yRZ-8q-5jV" firstAttribute="top" secondItem="JvN-4s-H8z" secondAttribute="topMargin" id="sQp-PG-6bC"/>
                     <constraint firstItem="EWQ-DE-jZt" firstAttribute="leading" secondItem="JvN-4s-H8z" secondAttribute="leadingMargin" id="sbJ-C0-C9K"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Lh2-an-X86" secondAttribute="bottom" id="sye-V0-aOM"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EWQ-DE-jZt" secondAttribute="bottom" id="ugP-Rt-b05"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="amberLabel" destination="1Qf-x8-Fc5" id="lUN-30-H9g"/>
                 <outlet property="designerCategoryNameLabel" destination="yRZ-8q-5jV" id="gGg-bo-cot"/>
                 <outlet property="nameLabel" destination="0zg-Ca-08O" id="SD6-AU-E3d"/>
                 <outlet property="priceLabel" destination="EWQ-DE-jZt" id="ekv-zG-Ang"/>

@@ -21,18 +21,21 @@ class PDConfigAttributesTableViewCell: UITableViewCell {
   func setData(for product: ProductResponseModel?, selectedOption: OptionModel?, key: ConfigCode?) {
 //    self.colorView?.backgroundColor = product?.colorId // I guess it should request somewhere with this id. I couldn't see in doc.
     self.colorLabel?.text = product?.color
-    let isColorSelectionEnable: Bool = self.isColorSelectionEnable(for: product)
-    let isSizeSelectionEnable: Bool = self.isSizeSelectionEnable(for: product)
-
-    self.colorSelectionButton?.isUserInteractionEnabled = isColorSelectionEnable
-    self.colorDownArrowImageView?.isHidden = !isColorSelectionEnable
-    self.sizeSelectionButton?.isUserInteractionEnabled = isSizeSelectionEnable
-    self.sizeDownArrowImageView?.isHidden = !isSizeSelectionEnable
+    self.setConfigsVisibilities(for: product)
     if let key: ConfigCode = key,
       key == .sizeCode,
       let option: OptionModel = selectedOption {
       self.chooseLabel?.text = option.label
     }
+  }
+
+  func setConfigsVisibilities(for product: ProductResponseModel?) {
+    let isColorSelectionEnable: Bool = self.isColorSelectionEnable(for: product)
+    let isSizeSelectionEnable: Bool = self.isSizeSelectionEnable(for: product)
+    self.colorSelectionButton?.isUserInteractionEnabled = isColorSelectionEnable
+    self.colorDownArrowImageView?.isHidden = !isColorSelectionEnable
+    self.sizeSelectionButton?.isUserInteractionEnabled = isSizeSelectionEnable
+    self.sizeDownArrowImageView?.isHidden = !isSizeSelectionEnable
   }
 
   func isColorSelectionEnable(for product: ProductResponseModel?) -> Bool {

@@ -17,6 +17,7 @@ enum PDConfigSelectionViewCellHeight: CGFloat {
 protocol PDConfigSelectionViewDelegate {
   func didSelectedAnyOption(option: OptionModel, key: ConfigCode)
   func didDoneButtonTapped()
+  func didAddToBagButtonTappedFromConfigSelection()
 }
 
 class PDConfigSelectionView: BaseView {
@@ -30,11 +31,19 @@ class PDConfigSelectionView: BaseView {
 
   var delegate: PDConfigSelectionViewDelegate? = nil
 
+  var product: ProductResponseModel? {
+    didSet {
+      if let configs = product?.configurableAttributes {
+        self.configs = configs
+      }
+    }
+  }
   var configs: [ConfigurableAttributeModel] = [ConfigurableAttributeModel]() {
     didSet {
       self.tableView?.reloadData()
     }
   }
+  var selectedConfigs: [ConfigurableAttributeModel] = [ConfigurableAttributeModel]()
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -50,6 +59,38 @@ class PDConfigSelectionView: BaseView {
   func setupView() {
     self.tableView?.registerXib(name: pdConfigColorTableViewCellIdentifier)
     self.tableView?.registerXib(name: pdConfigSizeTableViewCellIdentifier)
+  }
+
+  /// Gets user selected config value and checks in selectedConfig. If there is a value with same key which not added in bag,
+  ///replaces it else add a new value.
+  ///
+  /// - Parameters:
+  ///   - option: OptionModel
+  ///   - key: ConfigCode
+  func prepareConfigForBag(option: OptionModel, key: ConfigCode) {
+    if self.selectedConfigs.contains(where: { $0.code == key }),
+      let index: Int = self.selectedConfigs.firstIndex(where: { $0.code == key }) {
+      self.selectedConfigs[index].options = [option]
+    } else {
+      let config: ConfigurableAttributeModel = ConfigurableAttributeModel()
+      config.code = key
+      config.options = [option]
+      self.selectedConfigs.append(config)
+    }
+  }
+
+  /// Collects every unique config key for product and if one of them not exist in selectedConfigs avoid to add.
+  ///
+  /// - Returns: Bool
+  func canAddToBag() -> Bool {
+    for config in self.configs {
+      if let code = config.code {
+        if !self.selectedConfigs.contains(where: { $0.code == code }) {
+          return false
+        }
+      }
+    }
+    return true
   }
 
   // MARK: - IBActions
@@ -118,6 +159,7 @@ extension PDConfigSelectionView: UITableViewDelegate, UITableViewDataSource {
     if section == self.configs.count - 1 {
       let frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: ProductDetailHeights.footerView[])
       let footerView: PDAddToBagFooterView = PDAddToBagFooterView(frame: frame)
+      footerView.delegate = self
       footerView.backgroundColor = .clear
       return footerView
     }
@@ -129,8 +171,21 @@ extension PDConfigSelectionView: UITableViewDelegate, UITableViewDataSource {
   }
 }
 
+// MARK: - PDConfigColorTableViewCellDelegate, PDConfigSizeTableViewCellDelegate
 extension PDConfigSelectionView: PDConfigColorTableViewCellDelegate, PDConfigSizeTableViewCellDelegate {
   func didOptionSelected(option: OptionModel, key: ConfigCode) {
     self.delegate?.didSelectedAnyOption(option: option, key: key)
+    self.prepareConfigForBag(option: option, key: key)
+  }
+}
+
+extension PDConfigSelectionView: PDAddToBagFooterViewDelegate {
+  func didAddToBagButtonTapped() {
+    if self.canAddToBag() {
+      let bagModel = BagModel(product: self.product, attributes: self.selectedConfigs, quantity: 1)
+      BagProvider.shared.basket.append(bagModel)
+      self.selectedConfigs = [ConfigurableAttributeModel]()
+      self.delegate?.didAddToBagButtonTappedFromConfigSelection()
+    }
   }
 }

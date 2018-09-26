@@ -67,6 +67,8 @@
 		88E6F28C215B43C900748B9F /* PDRelatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F28B215B43C900748B9F /* PDRelatedTableViewCell.swift */; };
 		88E6F28F215B74D800748B9F /* PDImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F28E215B74D800748B9F /* PDImageCollectionViewCell.swift */; };
 		88E6F291215B74FA00748B9F /* PDImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F290215B74FA00748B9F /* PDImageCollectionViewCell.xib */; };
+		88E6F293215B870400748B9F /* BagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F292215B870400748B9F /* BagModel.swift */; };
+		88E6F296215B989300748B9F /* BagProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F295215B989300748B9F /* BagProvider.swift */; };
 		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +159,8 @@
 		88E6F28B215B43C900748B9F /* PDRelatedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDRelatedTableViewCell.swift; sourceTree = "<group>"; };
 		88E6F28E215B74D800748B9F /* PDImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		88E6F290215B74FA00748B9F /* PDImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		88E6F292215B870400748B9F /* BagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagModel.swift; sourceTree = "<group>"; };
+		88E6F295215B989300748B9F /* BagProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagProvider.swift; sourceTree = "<group>"; };
 		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
 		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -324,8 +328,9 @@
 				889E4F2C21593F5F0052CC86 /* Utilities */,
 				889E4F18215921D70052CC86 /* Network */,
 				889E4F17215921CA0052CC86 /* ViewModels */,
-				889E4F1A215921EF0052CC86 /* Storyboards */,
+				88E6F294215B988400748B9F /* Providers */,
 				889E4F19215921E30052CC86 /* ViewControllers */,
+				889E4F1A215921EF0052CC86 /* Storyboards */,
 				889E4F1F2159236B0052CC86 /* Views */,
 				889E4EE8215920240052CC86 /* AppDelegate.swift */,
 				889E4EF4215920250052CC86 /* Info.plist */,
@@ -443,6 +448,7 @@
 				889E4F43215963270052CC86 /* AttributeSpecificPropertiesModel.swift */,
 				889E4F45215966B00052CC86 /* CarouselModel.swift */,
 				881C9E03215A868600893E8C /* BadgeModel.swift */,
+				88E6F292215B870400748B9F /* BagModel.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -517,6 +523,14 @@
 				88E6F28E215B74D800748B9F /* PDImageCollectionViewCell.swift */,
 			);
 			path = PDImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		88E6F294215B988400748B9F /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				88E6F295215B989300748B9F /* BagProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -753,6 +767,7 @@
 				889E4F42215962C10052CC86 /* OptionModel.swift in Sources */,
 				88E6F285215B35F300748B9F /* PDAttributeTableViewCell.swift in Sources */,
 				881C9E15215ACA5900893E8C /* PDConfigAttributesTableViewCell.swift in Sources */,
+				88E6F293215B870400748B9F /* BagModel.swift in Sources */,
 				889E4F3A215953C30052CC86 /* PaginationModel.swift in Sources */,
 				889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */,
 				889E4F46215966B00052CC86 /* CarouselModel.swift in Sources */,
@@ -768,6 +783,7 @@
 				881C9E58215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift in Sources */,
 				889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */,
 				88E6F287215B36B200748B9F /* AttributeModel.swift in Sources */,
+				88E6F296215B989300748B9F /* BagProvider.swift in Sources */,
 				889E4F362159537E0052CC86 /* ProductResponseModel.swift in Sources */,
 				889E4F3C21595FCD0052CC86 /* MediaModel.swift in Sources */,
 				881C9E0F215AC53400893E8C /* PDDescriptionTableViewCell.swift in Sources */,
