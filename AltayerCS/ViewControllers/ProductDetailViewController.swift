@@ -63,7 +63,7 @@ class ProductDetailViewController: BaseViewController {
   func fillHeights() {
     self.cellHeights = [
       0: [
-        self.view.frame.size.height - (ProductDetailHeights.footerView[] * 2 + ProductDetailHeights.configCell[]),
+        self.view.frame.size.height - ProductDetailHeights.footerView[],
         ProductDetailHeights.descriptionCell[],
         ProductDetailHeights.configCell[]
       ],
@@ -108,6 +108,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
     case 0:
       if indexPath.row == 0 {
         if let cell: PDImageTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdImageTableViewCellIdentifier, for: indexPath) as? PDImageTableViewCell {
+          cell.setData(for: self.product?.media)
           return cell
         }
       } else if indexPath.row == 1 {

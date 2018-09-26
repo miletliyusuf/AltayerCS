@@ -18,9 +18,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="400.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-UZ-5Jm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="400.5"/>
-                    </imageView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CjB-Yo-Zem">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="401"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Szw-bw-0JV">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sHr-2T-yvc">
                         <rect key="frame" x="0.0" y="343" width="94" height="30"/>
                         <color key="backgroundColor" red="1" green="0.2901960784" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,15 +40,19 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="5Pl-UZ-5Jm" secondAttribute="bottom" id="2gO-tK-RuB"/>
-                    <constraint firstItem="5Pl-UZ-5Jm" firstAttribute="leading" secondItem="trh-t2-WWS" secondAttribute="leading" id="JMG-O6-wYU"/>
-                    <constraint firstItem="5Pl-UZ-5Jm" firstAttribute="top" secondItem="trh-t2-WWS" secondAttribute="top" id="TXR-uI-IQ4"/>
-                    <constraint firstItem="sHr-2T-yvc" firstAttribute="leading" secondItem="5Pl-UZ-5Jm" secondAttribute="leading" id="UPT-4e-fNe"/>
-                    <constraint firstItem="sHr-2T-yvc" firstAttribute="top" secondItem="5Pl-UZ-5Jm" secondAttribute="bottom" constant="-57.5" id="iFd-2Y-EC0"/>
-                    <constraint firstAttribute="trailing" secondItem="5Pl-UZ-5Jm" secondAttribute="trailing" id="nfo-ts-DFd"/>
-                    <constraint firstItem="sHr-2T-yvc" firstAttribute="width" secondItem="5Pl-UZ-5Jm" secondAttribute="width" multiplier="1/4" id="ys0-HN-B7H"/>
+                    <constraint firstItem="sHr-2T-yvc" firstAttribute="leading" secondItem="trh-t2-WWS" secondAttribute="leading" id="1jd-dX-JS8"/>
+                    <constraint firstAttribute="trailing" secondItem="CjB-Yo-Zem" secondAttribute="trailing" id="3rs-Mf-2LB"/>
+                    <constraint firstAttribute="bottom" secondItem="CjB-Yo-Zem" secondAttribute="bottom" constant="-0.5" id="Iyb-gB-wwn"/>
+                    <constraint firstAttribute="bottom" secondItem="sHr-2T-yvc" secondAttribute="bottom" constant="27.5" id="cNf-AK-WAW"/>
+                    <constraint firstItem="sHr-2T-yvc" firstAttribute="width" secondItem="trh-t2-WWS" secondAttribute="width" multiplier="1/4" id="mUM-hk-1Qx"/>
+                    <constraint firstItem="CjB-Yo-Zem" firstAttribute="leading" secondItem="trh-t2-WWS" secondAttribute="leading" id="rE5-iD-aWH"/>
+                    <constraint firstItem="CjB-Yo-Zem" firstAttribute="top" secondItem="trh-t2-WWS" secondAttribute="top" id="xoh-QB-9gP"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="CjB-Yo-Zem" id="rfC-8v-ett"/>
+                <outlet property="discountLabel" destination="sHr-2T-yvc" id="urB-Qq-Ci6"/>
+            </connections>
             <point key="canvasLocation" x="312.80000000000001" y="75.112443778110944"/>
         </tableViewCell>
     </objects>
