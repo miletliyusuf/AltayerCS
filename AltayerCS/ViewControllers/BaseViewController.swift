@@ -4,6 +4,23 @@ class BaseViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.setTheme()
+    self.subscribeForBagChanges()
+  }
+
+  func setTheme() {
+    self.tabBarController?.tabBar.tintColor = UIColor.blue
+    self.tabBarController?.tabBar.barTintColor = UIColor.white
+  }
+
+  func subscribeForBagChanges() {
+    _ = BagProvider.shared.badgeCount.subscribe(onNext: { (value) in
+      if let tabbar: UITabBarItem = self.tabBarController?.tabBar.items?[1] {
+        tabbar.badgeValue = value > 0 ? "\(value)" : nil
+      }
+    }, onError: { (error) in
+
+    })
   }
 
   /// Adds general action controller; cancel action is dismiss alertcontroller

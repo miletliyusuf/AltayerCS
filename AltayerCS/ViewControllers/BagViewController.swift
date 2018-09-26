@@ -9,6 +9,7 @@ class BagViewController: BaseViewController {
     didSet {
       self.tableView?.delegate = self
       self.tableView?.dataSource = self
+      self.tableView?.tableFooterView = UIView()
     }
   }
 

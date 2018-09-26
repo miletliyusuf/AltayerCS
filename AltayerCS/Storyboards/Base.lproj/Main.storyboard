@@ -116,7 +116,7 @@
         <scene sceneID="PyT-Rj-5dr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Pl-ng-su5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Clothing" id="jMQ-Xf-1br"/>
+                    <tabBarItem key="tabBarItem" title="Clothing" image="clothes" id="jMQ-Xf-1br"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wLf-js-aYh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -166,7 +166,7 @@
         <scene sceneID="rom-5u-OmF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SZd-yu-s9D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bag" id="f7m-Vi-ms4"/>
+                    <tabBarItem key="tabBarItem" title="Bag" image="bag" id="f7m-Vi-ms4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DFj-D2-zdq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -182,4 +182,8 @@
             <point key="canvasLocation" x="15.199999999999999" y="246.9265367316342"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bag" width="25" height="25"/>
+        <image name="clothes" width="25" height="25"/>
+    </resources>
 </document>
