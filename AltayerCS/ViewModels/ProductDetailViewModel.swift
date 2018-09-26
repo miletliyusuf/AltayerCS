@@ -29,4 +29,19 @@ class ProductDetailViewModel {
     attributeHeights[index] = height
     return attributeHeights
   }
+
+  func getDiscountedString(for price: String, specialPrice: String) -> NSMutableAttributedString {
+    let attributedString = NSMutableAttributedString(string: price + " " + specialPrice)
+    let firstPriceRange = NSRange(location: 0, length: price.count)
+    let discountedPriceRange = NSRange(location: price.count + 1, length: specialPrice.count)
+    let firstPriceAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: UIColor.gray,
+                                                              .font: UIFont.systemFont(ofSize: 14),
+                                                              .strikethroughColor: UIColor.gray,
+                                                              .strikethroughStyle : NSNumber(value: 2)]
+    attributedString.addAttributes(firstPriceAttributes, range: firstPriceRange)
+    let secondPriceAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: UIColor.red,
+                                                               .font: UIFont.systemFont(ofSize: 15)]
+    attributedString.addAttributes(secondPriceAttributes, range: discountedPriceRange)
+    return attributedString
+  }
 }

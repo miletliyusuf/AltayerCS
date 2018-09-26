@@ -63,7 +63,7 @@ class ProductDetailViewController: BaseViewController {
   func fillHeights() {
     self.cellHeights = [
       0: [
-        self.view.frame.size.height - ProductDetailHeights.configCell[],
+        self.view.frame.size.height - (ProductDetailHeights.footerView[] * 2 + ProductDetailHeights.configCell[]),
         ProductDetailHeights.descriptionCell[],
         ProductDetailHeights.configCell[]
       ],
@@ -130,7 +130,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
       }
     case 2:
       if let cell: PDRelatedTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdRelatedTableViewCellIdentifier, for: indexPath) as? PDRelatedTableViewCell {
-        if let products = self.product?.relatedProductsLookup?.values.reversed() {
+        if let products = self.product?.relatedProductsLookup?.values.filter({ $0.sku != self.product?.sku }) {
           // Should be in main thread. Otherwise, collectionView will not load cell data.
           DispatchQueue.main.async {
             cell.setData(for: products)
