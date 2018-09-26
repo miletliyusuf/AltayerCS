@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Pl-ng-su5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ffK-Z7-H3g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iwI-Ua-6d5">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UQn-Dt-akJ">
@@ -93,10 +93,30 @@
             </objects>
             <point key="canvasLocation" x="1676" y="-564"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="HET-b3-bvD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvq-q6-C0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="ffK-Z7-H3g" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="awm-Ys-OTv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1Pl-ng-su5" kind="relationship" relationship="viewControllers" id="Cyn-Iz-eLp"/>
+                        <segue destination="SZd-yu-s9D" kind="relationship" relationship="viewControllers" id="eP7-hY-er4"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1442" y="-358"/>
+        </scene>
+        <!--Clothing-->
         <scene sceneID="PyT-Rj-5dr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Pl-ng-su5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Clothing" id="jMQ-Xf-1br"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wLf-js-aYh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -110,6 +130,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gI-lL-KVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="-564.46776611694156"/>
+        </scene>
+        <!--Bag View Controller-->
+        <scene sceneID="5Fc-fe-q6r">
+            <objects>
+                <viewController storyboardIdentifier="BagViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6FA-7C-W4E" customClass="BagViewController" customModule="AltayerCS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MHo-l6-6dD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vRN-y6-E1E">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vRN-y6-E1E" firstAttribute="leading" secondItem="q5k-kt-nJt" secondAttribute="leading" id="0ym-cJ-saR"/>
+                            <constraint firstItem="q5k-kt-nJt" firstAttribute="bottom" secondItem="vRN-y6-E1E" secondAttribute="bottom" id="Yzr-Uq-jsr"/>
+                            <constraint firstItem="vRN-y6-E1E" firstAttribute="top" secondItem="q5k-kt-nJt" secondAttribute="top" id="dLI-Ns-Tfj"/>
+                            <constraint firstItem="q5k-kt-nJt" firstAttribute="trailing" secondItem="vRN-y6-E1E" secondAttribute="trailing" id="t5y-tX-v25"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q5k-kt-nJt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eVk-vO-oLG"/>
+                    <connections>
+                        <outlet property="tableView" destination="vRN-y6-E1E" id="v28-lD-qGg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xhi-7H-lk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954.39999999999998" y="246.9265367316342"/>
+        </scene>
+        <!--Bag-->
+        <scene sceneID="rom-5u-OmF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SZd-yu-s9D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bag" id="f7m-Vi-ms4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DFj-D2-zdq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6FA-7C-W4E" kind="relationship" relationship="rootViewController" id="hSy-Zc-4Qr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGi-8O-4da" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.199999999999999" y="246.9265367316342"/>
         </scene>
     </scenes>
 </document>

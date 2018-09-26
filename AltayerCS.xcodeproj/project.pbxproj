@@ -69,6 +69,9 @@
 		88E6F291215B74FA00748B9F /* PDImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F290215B74FA00748B9F /* PDImageCollectionViewCell.xib */; };
 		88E6F293215B870400748B9F /* BagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F292215B870400748B9F /* BagModel.swift */; };
 		88E6F296215B989300748B9F /* BagProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F295215B989300748B9F /* BagProvider.swift */; };
+		88E6F298215BB61D00748B9F /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F297215BB61D00748B9F /* BagViewController.swift */; };
+		88E6F29B215BB6E300748B9F /* BagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F29A215BB6E300748B9F /* BagTableViewCell.xib */; };
+		88E6F29D215BB6E800748B9F /* BagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F29C215BB6E800748B9F /* BagTableViewCell.swift */; };
 		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +164,9 @@
 		88E6F290215B74FA00748B9F /* PDImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		88E6F292215B870400748B9F /* BagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagModel.swift; sourceTree = "<group>"; };
 		88E6F295215B989300748B9F /* BagProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagProvider.swift; sourceTree = "<group>"; };
+		88E6F297215BB61D00748B9F /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
+		88E6F29A215BB6E300748B9F /* BagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BagTableViewCell.xib; sourceTree = "<group>"; };
+		88E6F29C215BB6E800748B9F /* BagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
 		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
 		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -392,6 +398,7 @@
 				889E4EEA215920240052CC86 /* BaseViewController.swift */,
 				889E4F1B2159226E0052CC86 /* ProductsViewController.swift */,
 				889E4F1D2159227B0052CC86 /* ProductDetailViewController.swift */,
+				88E6F297215BB61D00748B9F /* BagViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -411,6 +418,7 @@
 				881C9E1A215AD32A00893E8C /* BaseView.swift */,
 				889E4F47215970210052CC86 /* ProductCollectionViewCell */,
 				881C9E0A215AC4DE00893E8C /* ProductDetail */,
+				88E6F299215BB6D300748B9F /* BagTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -533,6 +541,15 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
+		88E6F299215BB6D300748B9F /* BagTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				88E6F29A215BB6E300748B9F /* BagTableViewCell.xib */,
+				88E6F29C215BB6E800748B9F /* BagTableViewCell.swift */,
+			);
+			path = BagTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -645,6 +662,7 @@
 				881C9E17215ACF5600893E8C /* PDAddToBagFooterView.xib in Resources */,
 				88E6F28A215B43C300748B9F /* PDRelatedTableViewCell.xib in Resources */,
 				88E6F283215B35EC00748B9F /* PDAttributeTableViewCell.xib in Resources */,
+				88E6F29B215BB6E300748B9F /* BagTableViewCell.xib in Resources */,
 				889E4EF0215920250052CC86 /* Assets.xcassets in Resources */,
 				881C9E07215AC34B00893E8C /* PDImageTableViewCell.xib in Resources */,
 				889E4F49215970320052CC86 /* ProductCollectionViewCell.xib in Resources */,
@@ -767,6 +785,7 @@
 				889E4F42215962C10052CC86 /* OptionModel.swift in Sources */,
 				88E6F285215B35F300748B9F /* PDAttributeTableViewCell.swift in Sources */,
 				881C9E15215ACA5900893E8C /* PDConfigAttributesTableViewCell.swift in Sources */,
+				88E6F298215BB61D00748B9F /* BagViewController.swift in Sources */,
 				88E6F293215B870400748B9F /* BagModel.swift in Sources */,
 				889E4F3A215953C30052CC86 /* PaginationModel.swift in Sources */,
 				889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */,
@@ -791,6 +810,7 @@
 				889E4F302159447C0052CC86 /* ProductsRequest.swift in Sources */,
 				881C9E19215ACF6F00893E8C /* PDAddToBagFooterView.swift in Sources */,
 				889E4F29215932780052CC86 /* BaseResponse.swift in Sources */,
+				88E6F29D215BB6E800748B9F /* BagTableViewCell.swift in Sources */,
 				889E4F402159626B0052CC86 /* ConfigurableAttributeModel.swift in Sources */,
 				889E4F3421594F920052CC86 /* ProductsResponse.swift in Sources */,
 				889E4F4B215970440052CC86 /* ProductCollectionViewCell.swift in Sources */,
