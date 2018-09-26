@@ -4,6 +4,7 @@ import ObjectMapper
 class ProductsRequest: BaseRequest {
 
   var page: Int? = 0
+  var fields: String = ""
 
   override func reqEndPointAndType() -> (String, HTTPMethod) {
     return ("api/women/clothing", .get)
@@ -13,6 +14,7 @@ class ProductsRequest: BaseRequest {
     super.mapping(map: map)
 
     page <- map["p"]
+    fields <- map["_fields"]
   }
 
   override func responseModel() -> BaseResponse.Type {

@@ -89,6 +89,7 @@ class ProductsViewController: BaseViewController {
   func fetchProducts(for page: Int) {
     let r: ProductsRequest = ProductsRequest()
     r.page = page
+    r.fields = "hits,pagination"
     _ = ProductsDataService.products(req: r).subscribe(onNext: { (response) in
       if let res = response as? ProductsResponse,
         let hits: [ProductResponseModel] = res.hits,
