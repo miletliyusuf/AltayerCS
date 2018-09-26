@@ -17,7 +17,7 @@ enum PDConfigSelectionViewCellHeight: CGFloat {
 protocol PDConfigSelectionViewDelegate {
   func didSelectedAnyOption(option: OptionModel, key: ConfigCode)
   func didDoneButtonTapped()
-  func didAddToBagButtonTappedFromConfigSelection()
+  func didAddToBagButtonTappedFromConfigSelection(status: Bool)
 }
 
 class PDConfigSelectionView: BaseView {
@@ -184,8 +184,10 @@ extension PDConfigSelectionView: PDAddToBagFooterViewDelegate {
     if self.canAddToBag() {
       let bagModel = BagModel(product: self.product, attributes: self.selectedConfigs, quantity: 1)
       BagProvider.shared.basket.append(bagModel)
+      self.delegate?.didAddToBagButtonTappedFromConfigSelection(status: true)
       self.selectedConfigs = [ConfigurableAttributeModel]()
-      self.delegate?.didAddToBagButtonTappedFromConfigSelection()
+    } else {
+      self.delegate?.didAddToBagButtonTappedFromConfigSelection(status: false)
     }
   }
 }

@@ -83,7 +83,9 @@ class ProductDetailViewController: BaseViewController {
   func setupConfigSelectionView() {
     guard let configs = self.product?.configurableAttributes else { return }
     self.configSelectionView?.configs = configs
-    self.configSelectionViewHeightConstraint?.constant = CGFloat(configs.count * 150) + ProductDetailHeights.footerView[]
+    let configSelectionHeight = CGFloat(configs.count * 150) + ProductDetailHeights.footerView[]
+    self.configSelectionViewHeightConstraint?.constant = configSelectionHeight
+    self.configSelectionViewBottomConstraint?.constant = 0 - configSelectionHeight - 100
   }
 
   func willShowConfigView(status: Bool) {
@@ -213,8 +215,11 @@ extension ProductDetailViewController: PDConfigSelectionViewDelegate {
     self.willShowConfigView(status: false)
   }
 
-  func didAddToBagButtonTappedFromConfigSelection() {
-    self.willShowConfigView(status: false)
+  func didAddToBagButtonTappedFromConfigSelection(status: Bool) {
+    self.willShowConfigView(status: !status)
+    if status == false {
+      super.addAlertAction(title: "Error", message: "Can not add item", defaultTitle: "Okay")
+    }
   }
 }
 
