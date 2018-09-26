@@ -60,6 +60,9 @@
 		88E6F27C215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F27B215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib */; };
 		88E6F27E215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F27D215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift */; };
 		88E6F280215B28A700748B9F /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F27F215B28A700748B9F /* ProductRequest.swift */; };
+		88E6F283215B35EC00748B9F /* PDAttributeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F282215B35EC00748B9F /* PDAttributeTableViewCell.xib */; };
+		88E6F285215B35F300748B9F /* PDAttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F284215B35F300748B9F /* PDAttributeTableViewCell.swift */; };
+		88E6F287215B36B200748B9F /* AttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F286215B36B200748B9F /* AttributeModel.swift */; };
 		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +146,9 @@
 		88E6F27B215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDConfigSizeCollectionViewCell.xib; sourceTree = "<group>"; };
 		88E6F27D215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDConfigSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		88E6F27F215B28A700748B9F /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
+		88E6F282215B35EC00748B9F /* PDAttributeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDAttributeTableViewCell.xib; sourceTree = "<group>"; };
+		88E6F284215B35F300748B9F /* PDAttributeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDAttributeTableViewCell.swift; sourceTree = "<group>"; };
+		88E6F286215B36B200748B9F /* AttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeModel.swift; sourceTree = "<group>"; };
 		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
 		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				881C9E0B215AC4F900893E8C /* PDDescriptionTableViewCell */,
 				881C9E10215AC8E500893E8C /* PDConfigAttributesTableViewCell */,
 				881C9E11215ACA3000893E8C /* PDAddToBagFooterView */,
+				88E6F281215B35D300748B9F /* PDAttributeTableViewCell */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -421,6 +428,7 @@
 				889E4F3B21595FCD0052CC86 /* MediaModel.swift */,
 				889E4F3D215961CD0052CC86 /* StockModel.swift */,
 				889E4F3F2159626B0052CC86 /* ConfigurableAttributeModel.swift */,
+				88E6F286215B36B200748B9F /* AttributeModel.swift */,
 				889E4F41215962C10052CC86 /* OptionModel.swift */,
 				889E4F43215963270052CC86 /* AttributeSpecificPropertiesModel.swift */,
 				889E4F45215966B00052CC86 /* CarouselModel.swift */,
@@ -472,6 +480,15 @@
 				88E6F27D215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift */,
 			);
 			path = PDConfigSizeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		88E6F281215B35D300748B9F /* PDAttributeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				88E6F282215B35EC00748B9F /* PDAttributeTableViewCell.xib */,
+				88E6F284215B35F300748B9F /* PDAttributeTableViewCell.swift */,
+			);
+			path = PDAttributeTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,6 +601,7 @@
 			files = (
 				889E4EF3215920250052CC86 /* LaunchScreen.storyboard in Resources */,
 				881C9E17215ACF5600893E8C /* PDAddToBagFooterView.xib in Resources */,
+				88E6F283215B35EC00748B9F /* PDAttributeTableViewCell.xib in Resources */,
 				889E4EF0215920250052CC86 /* Assets.xcassets in Resources */,
 				881C9E07215AC34B00893E8C /* PDImageTableViewCell.xib in Resources */,
 				889E4F49215970320052CC86 /* ProductCollectionViewCell.xib in Resources */,
@@ -702,6 +720,7 @@
 				889E4F1C2159226E0052CC86 /* ProductsViewController.swift in Sources */,
 				881C9E09215AC35100893E8C /* PDImageTableViewCell.swift in Sources */,
 				889E4F42215962C10052CC86 /* OptionModel.swift in Sources */,
+				88E6F285215B35F300748B9F /* PDAttributeTableViewCell.swift in Sources */,
 				881C9E15215ACA5900893E8C /* PDConfigAttributesTableViewCell.swift in Sources */,
 				889E4F3A215953C30052CC86 /* PaginationModel.swift in Sources */,
 				889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */,
@@ -716,6 +735,7 @@
 				881C9E002159758000893E8C /* Extensions.swift in Sources */,
 				881C9E58215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift in Sources */,
 				889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */,
+				88E6F287215B36B200748B9F /* AttributeModel.swift in Sources */,
 				889E4F362159537E0052CC86 /* ProductResponseModel.swift in Sources */,
 				889E4F3C21595FCD0052CC86 /* MediaModel.swift in Sources */,
 				881C9E0F215AC53400893E8C /* PDDescriptionTableViewCell.swift in Sources */,

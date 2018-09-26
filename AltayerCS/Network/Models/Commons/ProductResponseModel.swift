@@ -51,6 +51,7 @@ class ProductResponseModel: BaseResponse {
   var isClearance: Bool?
   var isPromotion: Int?
   var configurableAttributes: [ConfigurableAttributeModel]?
+  var copyAttributes: [AttributeModel]?
   var sameColorSiblings: [String]?
   var areAnyOptionsInStock: Bool?
   var stockOfAllOptions: StockModel?
@@ -115,6 +116,7 @@ class ProductResponseModel: BaseResponse {
     isClearance <- map["isClearance"]
     isPromotion <- map["isPromotion"]
     configurableAttributes <- map["configurableAttributes"]
+    copyAttributes <- map["copyAttributes"]
     sameColorSiblings <- map["sameColorSiblings"]
     areAnyOptionsInStock <- map["areAnyOptionsInStock"]
     stockOfAllOptions <- map["stockOfAllOptions"]

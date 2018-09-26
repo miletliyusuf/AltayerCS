@@ -32,9 +32,10 @@ class ProductDetailViewController: BaseViewController {
   // MARK: - Custom Methods
   func setupViews() {
     // Register cells
-    self.tableView?.registerXib(name: self.viewModel.PDImageTableViewCellIdentifier)
-    self.tableView?.registerXib(name: self.viewModel.PDDescriptionTableViewCellIdentifier)
-    self.tableView?.registerXib(name: self.viewModel.PDConfigAttributesTableViewCellIdentifier)
+    self.tableView?.registerXib(name: self.viewModel.pdImageTableViewCellIdentifier)
+    self.tableView?.registerXib(name: self.viewModel.pdDescriptionTableViewCellIdentifier)
+    self.tableView?.registerXib(name: self.viewModel.pdConfigAttributesTableViewCellIdentifier)
+    self.tableView?.registerXib(name: self.viewModel.pdAttributeTableViewCellIdentifier)
 
     self.fillHeights()
     self.setupConfigSelectionView()
@@ -57,9 +58,15 @@ class ProductDetailViewController: BaseViewController {
 
   func fillHeights() {
     self.cellHeights = [
-      0: [ self.view.frame.size.height - ProductDetailHeights.configCell[],
-           ProductDetailHeights.descriptionCell[],
-           ProductDetailHeights.configCell[],
+      0: [
+        self.view.frame.size.height - ProductDetailHeights.configCell[],
+        ProductDetailHeights.descriptionCell[],
+        ProductDetailHeights.configCell[]
+      ],
+      1: [
+        ProductDetailHeights.attributeCellClose[],
+        ProductDetailHeights.attributeCellClose[],
+        ProductDetailHeights.attributeCellClose[],
       ]
     ]
   }
@@ -81,7 +88,7 @@ class ProductDetailViewController: BaseViewController {
 
 extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return self.cellHeights.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,20 +100,26 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
     switch indexPath.section {
     case 0:
       if indexPath.row == 0 {
-        if let cell: PDImageTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.PDImageTableViewCellIdentifier, for: indexPath) as? PDImageTableViewCell {
+        if let cell: PDImageTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdImageTableViewCellIdentifier, for: indexPath) as? PDImageTableViewCell {
           return cell
         }
       } else if indexPath.row == 1 {
-        if let cell: PDDescriptionTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.PDDescriptionTableViewCellIdentifier, for: indexPath) as? PDDescriptionTableViewCell {
+        if let cell: PDDescriptionTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdDescriptionTableViewCellIdentifier, for: indexPath) as? PDDescriptionTableViewCell {
           cell.setData(for: self.product)
           return cell
         }
       } else {
-        if let cell: PDConfigAttributesTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.PDConfigAttributesTableViewCellIdentifier, for: indexPath) as? PDConfigAttributesTableViewCell {
+        if let cell: PDConfigAttributesTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdConfigAttributesTableViewCellIdentifier, for: indexPath) as? PDConfigAttributesTableViewCell {
           cell.delegate = self
           cell.setData(for: self.product, selectedOption: self.selectedOption, key: self.selectedOptionKey)
           return cell
         }
+      }
+    case 1:
+      if let cell: PDAttributeTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdAttributeTableViewCellIdentifier, for: indexPath) as? PDAttributeTableViewCell,
+        let attribute: AttributeModel = self.product?.copyAttributes?[indexPath.row] {
+        cell.setData(for: attribute)
+        return cell
       }
     default:
       break
@@ -130,7 +143,17 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
   }
 
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    return ProductDetailHeights.footerView[]
+    return section == 0 ? ProductDetailHeights.footerView[] : 0
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if indexPath.section == 1 {
+      if let attributeHeights: [CGFloat] = self.cellHeights[1] {
+        self.cellHeights[1] = self.viewModel.getCellHeight(heights: attributeHeights, at: indexPath.row)
+        tableView.reloadRows(at: [indexPath], with: .fade)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+      }
+    }
   }
 }
 

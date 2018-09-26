@@ -17,7 +17,7 @@ class PDConfigAttributesTableViewCell: UITableViewCell {
 
   // MARK: - Custom Methods
   func setData(for product: ProductResponseModel?, selectedOption: OptionModel?, key: ConfigCode?) {
-//    self.colorView?.backgroundColor = product?.colorId // I guess it should request somewhere with this id.
+//    self.colorView?.backgroundColor = product?.colorId // I guess it should request somewhere with this id. I couldn't see in doc.
     self.colorLabel?.text = product?.color
     self.colorSelectionButton?.isUserInteractionEnabled = self.isColorSelectionEnable(for: product)
     self.sizeSelectionButton?.isUserInteractionEnabled = self.isSizeSelectionEnable(for: product)
