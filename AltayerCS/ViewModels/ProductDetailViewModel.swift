@@ -7,6 +7,7 @@ enum ProductDetailHeights: CGFloat {
   case footerView = 90.0
   case attributeCellClose = 70
   case attributeCellOpen = 200
+  case relatedCell = 300
 
   public subscript() -> CGFloat {
     return self.rawValue
@@ -19,6 +20,7 @@ class ProductDetailViewModel {
   let pdConfigAttributesTableViewCellIdentifier: String = "PDConfigAttributesTableViewCell"
   let pdAddToBagFooterViewIdentifier: String = "PDAddToBagFooterView"
   let pdAttributeTableViewCellIdentifier: String = "PDAttributeTableViewCell"
+  let pdRelatedTableViewCellIdentifier: String = "PDRelatedTableViewCell"
 
   func getCellHeight(heights: [CGFloat], at index: Int) -> [CGFloat] {
     var attributeHeights = heights

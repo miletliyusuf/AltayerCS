@@ -36,14 +36,18 @@ class ProductDetailViewController: BaseViewController {
     self.tableView?.registerXib(name: self.viewModel.pdDescriptionTableViewCellIdentifier)
     self.tableView?.registerXib(name: self.viewModel.pdConfigAttributesTableViewCellIdentifier)
     self.tableView?.registerXib(name: self.viewModel.pdAttributeTableViewCellIdentifier)
+    self.tableView?.registerXib(name: self.viewModel.pdRelatedTableViewCellIdentifier)
 
     self.fillHeights()
     self.setupConfigSelectionView()
+    if let sku = self.product?.sku {
+      self.fetchProduct(for: sku)
+    }
   }
 
-  func fetchProduct(for option: OptionModel) {
+  func fetchProduct(for slug: String) {
     let r: ProductRequest = ProductRequest()
-    r.slug = option.simpleProductSkus?.first
+    r.slug = slug
     _ = ProductsDataService.product(req: r).subscribe(onNext: { (response) in
       if let res: ProductResponseModel = response as? ProductResponseModel,
         let configs: [ConfigurableAttributeModel] = res.configurableAttributes {
@@ -67,6 +71,9 @@ class ProductDetailViewController: BaseViewController {
         ProductDetailHeights.attributeCellClose[],
         ProductDetailHeights.attributeCellClose[],
         ProductDetailHeights.attributeCellClose[],
+      ],
+      2: [
+        ProductDetailHeights.relatedCell[]
       ]
     ]
   }
@@ -119,6 +126,13 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
       if let cell: PDAttributeTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdAttributeTableViewCellIdentifier, for: indexPath) as? PDAttributeTableViewCell,
         let attribute: AttributeModel = self.product?.copyAttributes?[indexPath.row] {
         cell.setData(for: attribute)
+        return cell
+      }
+    case 2:
+      if let cell: PDRelatedTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.pdRelatedTableViewCellIdentifier, for: indexPath) as? PDRelatedTableViewCell {
+        if let products = self.product?.relatedProductsLookup?.values.reversed() {
+          cell.setData(for: products)
+        }
         return cell
       }
     default:
@@ -179,7 +193,9 @@ extension ProductDetailViewController: PDConfigSelectionViewDelegate {
   func didSelectedAnyOption(option: OptionModel, key: ConfigCode) {
     self.selectedOption = option
     self.selectedOptionKey = key
-    self.fetchProduct(for: option)
+    if let slug = option.simpleProductSkus?.first {
+      self.fetchProduct(for: slug)
+    }
   }
 
   func didDoneButtonTapped() {

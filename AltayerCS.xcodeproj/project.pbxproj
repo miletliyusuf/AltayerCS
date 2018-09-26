@@ -63,6 +63,8 @@
 		88E6F283215B35EC00748B9F /* PDAttributeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F282215B35EC00748B9F /* PDAttributeTableViewCell.xib */; };
 		88E6F285215B35F300748B9F /* PDAttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F284215B35F300748B9F /* PDAttributeTableViewCell.swift */; };
 		88E6F287215B36B200748B9F /* AttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F286215B36B200748B9F /* AttributeModel.swift */; };
+		88E6F28A215B43C300748B9F /* PDRelatedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F289215B43C300748B9F /* PDRelatedTableViewCell.xib */; };
+		88E6F28C215B43C900748B9F /* PDRelatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F28B215B43C900748B9F /* PDRelatedTableViewCell.swift */; };
 		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +151,8 @@
 		88E6F282215B35EC00748B9F /* PDAttributeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDAttributeTableViewCell.xib; sourceTree = "<group>"; };
 		88E6F284215B35F300748B9F /* PDAttributeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDAttributeTableViewCell.swift; sourceTree = "<group>"; };
 		88E6F286215B36B200748B9F /* AttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeModel.swift; sourceTree = "<group>"; };
+		88E6F289215B43C300748B9F /* PDRelatedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDRelatedTableViewCell.xib; sourceTree = "<group>"; };
+		88E6F28B215B43C900748B9F /* PDRelatedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDRelatedTableViewCell.swift; sourceTree = "<group>"; };
 		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
 		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				881C9E10215AC8E500893E8C /* PDConfigAttributesTableViewCell */,
 				881C9E11215ACA3000893E8C /* PDAddToBagFooterView */,
 				88E6F281215B35D300748B9F /* PDAttributeTableViewCell */,
+				88E6F288215B43A100748B9F /* PDRelatedTableViewCell */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -491,6 +496,15 @@
 			path = PDAttributeTableViewCell;
 			sourceTree = "<group>";
 		};
+		88E6F288215B43A100748B9F /* PDRelatedTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				88E6F289215B43C300748B9F /* PDRelatedTableViewCell.xib */,
+				88E6F28B215B43C900748B9F /* PDRelatedTableViewCell.swift */,
+			);
+			path = PDRelatedTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -601,6 +615,7 @@
 			files = (
 				889E4EF3215920250052CC86 /* LaunchScreen.storyboard in Resources */,
 				881C9E17215ACF5600893E8C /* PDAddToBagFooterView.xib in Resources */,
+				88E6F28A215B43C300748B9F /* PDRelatedTableViewCell.xib in Resources */,
 				88E6F283215B35EC00748B9F /* PDAttributeTableViewCell.xib in Resources */,
 				889E4EF0215920250052CC86 /* Assets.xcassets in Resources */,
 				881C9E07215AC34B00893E8C /* PDImageTableViewCell.xib in Resources */,
@@ -725,6 +740,7 @@
 				889E4F3A215953C30052CC86 /* PaginationModel.swift in Sources */,
 				889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */,
 				889E4F46215966B00052CC86 /* CarouselModel.swift in Sources */,
+				88E6F28C215B43C900748B9F /* PDRelatedTableViewCell.swift in Sources */,
 				889E4F2721592DF10052CC86 /* BaseRequest.swift in Sources */,
 				881C9E4E215AF0E200893E8C /* PDConfigSelectionView.swift in Sources */,
 				889E4F38215953AB0052CC86 /* BaseModel.swift in Sources */,

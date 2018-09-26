@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PDRelatedTableViewCell" rowHeight="130" id="vWK-AS-hNx" customClass="PDRelatedTableViewCell" customModule="AltayerCS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vWK-AS-hNx" id="GT9-y6-Fr4">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="16K-BT-gB4">
+                        <rect key="frame" x="16" y="24" width="343" height="105.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dzB-ek-VIQ">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More From This Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqn-En-25E">
+                        <rect key="frame" x="16" y="0.0" width="343" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="q5r-wo-fI6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="16K-BT-gB4" firstAttribute="top" secondItem="Yqn-En-25E" secondAttribute="bottom" id="KBy-GI-vxI"/>
+                    <constraint firstAttribute="trailing" secondItem="Yqn-En-25E" secondAttribute="trailing" constant="16" id="Ohd-wA-eFl"/>
+                    <constraint firstAttribute="bottom" secondItem="16K-BT-gB4" secondAttribute="bottom" id="QDQ-oC-lln"/>
+                    <constraint firstItem="16K-BT-gB4" firstAttribute="leading" secondItem="GT9-y6-Fr4" secondAttribute="leading" constant="16" id="U8U-rt-cFz"/>
+                    <constraint firstItem="Yqn-En-25E" firstAttribute="top" secondItem="GT9-y6-Fr4" secondAttribute="top" id="aBW-7a-9Ml"/>
+                    <constraint firstAttribute="trailing" secondItem="16K-BT-gB4" secondAttribute="trailing" constant="16" id="by5-g1-IrA"/>
+                    <constraint firstItem="Yqn-En-25E" firstAttribute="leading" secondItem="GT9-y6-Fr4" secondAttribute="leading" constant="16" id="wFd-6c-eWy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="16K-BT-gB4" id="ELG-ZZ-fba"/>
+            </connections>
+            <point key="canvasLocation" x="-71.200000000000003" y="111.54422788605699"/>
+        </tableViewCell>
+    </objects>
+</document>
