@@ -17,4 +17,8 @@ class OptionModel: BaseModel {
     isInStock <- map["isInStock"]
     attributeSpecificProperties <- map["attributeSpecificProperties"]
   }
+
+  static func ==(lhs: OptionModel, rhs: OptionModel) -> Bool {
+    return lhs.label == rhs.label
+  }
 }

@@ -21,6 +21,7 @@ class PDConfigSizeTableViewCell: UITableViewCell {
       self.collectionView?.reloadData()
     }
   }
+  var selectedOption: OptionModel?
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -43,6 +44,10 @@ extension PDConfigSizeTableViewCell: UICollectionViewDelegate, UICollectionViewD
     if let cell: PDConfigSizeCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: pdConfigSizeCollectionViewCellIdentifier, for: indexPath) as? PDConfigSizeCollectionViewCell,
       let option: OptionModel = self.options?[indexPath.row] {
       cell.setData(for: option)
+      if let selectedOption = self.selectedOption {
+        let isSelected = selectedOption == option && option.isInStock == true
+        cell.layer.borderColor = isSelected ? UIColor.green.cgColor : UIColor.black.cgColor
+      }
       return cell
     }
     return UICollectionViewCell()
@@ -56,5 +61,6 @@ extension PDConfigSizeTableViewCell: UICollectionViewDelegate, UICollectionViewD
     // Set selection
     guard let option: OptionModel = self.options?[indexPath.row] else { return }
     self.delegate?.didOptionSelected(option: option, key: .sizeCode)
+    self.selectedOption = option
   }
 }

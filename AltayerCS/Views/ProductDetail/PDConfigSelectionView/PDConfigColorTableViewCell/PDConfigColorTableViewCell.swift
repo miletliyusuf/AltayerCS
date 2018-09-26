@@ -22,6 +22,7 @@ class PDConfigColorTableViewCell: UITableViewCell {
       self.collectionView?.reloadData()
     }
   }
+  var selectedOption: OptionModel?
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -44,6 +45,10 @@ extension PDConfigColorTableViewCell: UICollectionViewDelegate, UICollectionView
     if let cell: PDConfigColorCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: pdConfigColorCollectionViewCellIdentifier, for: indexPath) as? PDConfigColorCollectionViewCell,
       let option: OptionModel = self.options?[indexPath.row] {
       cell.setData(for: option)
+      if let selectedOption = self.selectedOption {
+        let isSelected: Bool = selectedOption == option && option.isInStock == true
+        cell.layer.borderColor = isSelected ? UIColor.green.cgColor : UIColor.clear.cgColor
+      }
       return cell
     }
     return UICollectionViewCell()
@@ -57,5 +62,6 @@ extension PDConfigColorTableViewCell: UICollectionViewDelegate, UICollectionView
     // Set selection
     guard let option: OptionModel = self.options?[indexPath.row] else { return }
     self.delegate?.didOptionSelected(option: option, key: .color)
+    self.selectedOption = option
   }
 }
