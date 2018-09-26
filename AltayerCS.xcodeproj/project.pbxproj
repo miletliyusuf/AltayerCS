@@ -73,6 +73,7 @@
 		88E6F29B215BB6E300748B9F /* BagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F29A215BB6E300748B9F /* BagTableViewCell.xib */; };
 		88E6F29D215BB6E800748B9F /* BagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F29C215BB6E800748B9F /* BagTableViewCell.swift */; };
 		88E6F29F215BBDCC00748B9F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F29E215BBDCC00748B9F /* LoadingView.swift */; };
+		88E6F2A1215BBFCB00748B9F /* ProductDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F2A0215BBFCB00748B9F /* ProductDetailViewModelTests.swift */; };
 		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +170,7 @@
 		88E6F29A215BB6E300748B9F /* BagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BagTableViewCell.xib; sourceTree = "<group>"; };
 		88E6F29C215BB6E800748B9F /* BagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
 		88E6F29E215BBDCC00748B9F /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		88E6F2A0215BBFCB00748B9F /* ProductDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModelTests.swift; sourceTree = "<group>"; };
 		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
 		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				881C9E01215A75F600893E8C /* ProductsViewModelTests.swift */,
+				88E6F2A0215BBFCB00748B9F /* ProductDetailViewModelTests.swift */,
 				889E4EFD215920260052CC86 /* AltayerCSTests.swift */,
 				889E4EFF215920260052CC86 /* Info.plist */,
 			);
@@ -833,6 +836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				881C9E02215A75F600893E8C /* ProductsViewModelTests.swift in Sources */,
+				88E6F2A1215BBFCB00748B9F /* ProductDetailViewModelTests.swift in Sources */,
 				889E4EFE215920260052CC86 /* AltayerCSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,8 @@ enum ProductDetailHeights: CGFloat {
 }
 
 class ProductDetailViewModel {
+
+  /// Views constant values
   let pdImageTableViewCellIdentifier: String = "PDImageTableViewCell"
   let pdDescriptionTableViewCellIdentifier: String = "PDDescriptionTableViewCell"
   let pdConfigAttributesTableViewCellIdentifier: String = "PDConfigAttributesTableViewCell"
@@ -22,6 +24,12 @@ class ProductDetailViewModel {
   let pdAttributeTableViewCellIdentifier: String = "PDAttributeTableViewCell"
   let pdRelatedTableViewCellIdentifier: String = "PDRelatedTableViewCell"
 
+  /// Determinetes PDAttributeTableViewCell is expanded or not.
+  ///
+  /// - Parameters:
+  ///   - heights: Instant heights
+  ///   - index: Cell at index
+  /// - Returns: New cell heights
   func getCellHeight(heights: [CGFloat], at index: Int) -> [CGFloat] {
     var attributeHeights = heights
     var height = attributeHeights[index]
@@ -30,6 +38,12 @@ class ProductDetailViewModel {
     return attributeHeights
   }
 
+  /// Gets price and special or minPrice and stroke old one.
+  ///
+  /// - Parameters:
+  ///   - price: Old price
+  ///   - specialPrice: New Price
+  /// - Returns: New AttributedString
   func getDiscountedString(for price: String, specialPrice: String) -> NSMutableAttributedString {
     let attributedString = NSMutableAttributedString(string: price + " " + specialPrice)
     let firstPriceRange = NSRange(location: 0, length: price.count)

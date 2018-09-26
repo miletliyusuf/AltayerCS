@@ -37,7 +37,7 @@ class ProductsViewModelTests: XCTestCase {
     sleep(3)
   }
 
-  func testGetIndexPaths(for hits: [ProductModel]) {
+  func testGetIndexPaths(for hits: [ProductResponseModel]) {
     XCTAssertTrue(self.viewModel.getIndexPaths(for: hits, in: hits).count == hits.count)
   }
 
