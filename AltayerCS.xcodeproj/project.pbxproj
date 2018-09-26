@@ -55,6 +55,10 @@
 		889E4F46215966B00052CC86 /* CarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F45215966B00052CC86 /* CarouselModel.swift */; };
 		889E4F49215970320052CC86 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889E4F48215970320052CC86 /* ProductCollectionViewCell.xib */; };
 		889E4F4B215970440052CC86 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4F4A215970440052CC86 /* ProductCollectionViewCell.swift */; };
+		88E6F277215B1AE100748B9F /* PDConfigSizeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F276215B1AE100748B9F /* PDConfigSizeTableViewCell.xib */; };
+		88E6F279215B1AF800748B9F /* PDConfigSizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F278215B1AF800748B9F /* PDConfigSizeTableViewCell.swift */; };
+		88E6F27C215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E6F27B215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib */; };
+		88E6F27E215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6F27D215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift */; };
 		BBDF0D9A759523323A3827B7 /* Pods_AltayerCS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F8AF9ED6C3AF1AFFD66EC /* Pods_AltayerCS.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +137,10 @@
 		889E4F45215966B00052CC86 /* CarouselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModel.swift; sourceTree = "<group>"; };
 		889E4F48215970320052CC86 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		889E4F4A215970440052CC86 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		88E6F276215B1AE100748B9F /* PDConfigSizeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDConfigSizeTableViewCell.xib; sourceTree = "<group>"; };
+		88E6F278215B1AF800748B9F /* PDConfigSizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDConfigSizeTableViewCell.swift; sourceTree = "<group>"; };
+		88E6F27B215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDConfigSizeCollectionViewCell.xib; sourceTree = "<group>"; };
+		88E6F27D215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDConfigSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5FBFFE9C6F0237893937291 /* Pods-AltayerCSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSTests/Pods-AltayerCSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C432565AB7A3C59FE0F8A9F2 /* Pods-AltayerCS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCS/Pods-AltayerCS.release.xcconfig"; sourceTree = "<group>"; };
 		C5D940ED46CD1DBFB6AF954E /* Pods-AltayerCSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltayerCSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltayerCSUITests/Pods-AltayerCSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +251,8 @@
 			children = (
 				881C9E4B215AF0D500893E8C /* PDConfigSelectionView.xib */,
 				881C9E4D215AF0E200893E8C /* PDConfigSelectionView.swift */,
+				88E6F275215B1ACB00748B9F /* PDConfigSizeTableViewCell */,
+				88E6F27A215B1BC900748B9F /* PDConfigSizeCollectionViewCell */,
 				881C9E4F215B09BB00893E8C /* PDConfigColorTableViewCell */,
 				881C9E54215B0E7800893E8C /* PDConfigColorCollectionViewCell */,
 			);
@@ -442,6 +452,25 @@
 			path = ProductCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		88E6F275215B1ACB00748B9F /* PDConfigSizeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				88E6F276215B1AE100748B9F /* PDConfigSizeTableViewCell.xib */,
+				88E6F278215B1AF800748B9F /* PDConfigSizeTableViewCell.swift */,
+			);
+			name = PDConfigSizeTableViewCell;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		88E6F27A215B1BC900748B9F /* PDConfigSizeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				88E6F27B215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib */,
+				88E6F27D215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift */,
+			);
+			path = PDConfigSizeCollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -559,7 +588,9 @@
 				881C9E13215ACA5200893E8C /* PDConfigAttributesTableViewCell.xib in Resources */,
 				881C9E51215B09DA00893E8C /* PDConfigColorTableViewCell.xib in Resources */,
 				881C9E56215B0E9200893E8C /* PDConfigColorCollectionViewCell.xib in Resources */,
+				88E6F27C215B1BE100748B9F /* PDConfigSizeCollectionViewCell.xib in Resources */,
 				889E4EEE215920240052CC86 /* Main.storyboard in Resources */,
+				88E6F277215B1AE100748B9F /* PDConfigSizeTableViewCell.xib in Resources */,
 				881C9E0D215AC51F00893E8C /* PDDescriptionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +716,7 @@
 				889E4F362159537E0052CC86 /* ProductModel.swift in Sources */,
 				889E4F3C21595FCD0052CC86 /* MediaModel.swift in Sources */,
 				881C9E0F215AC53400893E8C /* PDDescriptionTableViewCell.swift in Sources */,
+				88E6F27E215B1BF100748B9F /* PDConfigSizeCollectionViewCell.swift in Sources */,
 				889E4F302159447C0052CC86 /* ProductsRequest.swift in Sources */,
 				881C9E19215ACF6F00893E8C /* PDAddToBagFooterView.swift in Sources */,
 				889E4F29215932780052CC86 /* BaseResponse.swift in Sources */,
@@ -693,6 +725,7 @@
 				889E4F4B215970440052CC86 /* ProductCollectionViewCell.swift in Sources */,
 				881C9E04215A868600893E8C /* BadgeModel.swift in Sources */,
 				889E4F44215963270052CC86 /* AttributeSpecificPropertiesModel.swift in Sources */,
+				88E6F279215B1AF800748B9F /* PDConfigSizeTableViewCell.swift in Sources */,
 				889E4F2E21593F6A0052CC86 /* Config.swift in Sources */,
 				889E4F21215923B60052CC86 /* ProductsViewModel.swift in Sources */,
 				889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */,

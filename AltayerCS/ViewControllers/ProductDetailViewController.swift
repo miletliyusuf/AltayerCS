@@ -137,7 +137,7 @@ extension ProductDetailViewController: PDAddToBagFooterViewDelegate {
 // MARK: - PDConfigSelectionViewDelegate
 extension ProductDetailViewController: PDConfigSelectionViewDelegate {
   func didSelectedAnyOption(option: OptionModel) {
-
+    print(option)
   }
 
   func didDoneButtonTapped() {

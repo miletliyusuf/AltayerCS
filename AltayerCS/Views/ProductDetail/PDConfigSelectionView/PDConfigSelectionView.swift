@@ -3,6 +3,7 @@ import UIKit
 
 fileprivate let identifier: String = "PDConfigSelectionView"
 fileprivate let pdConfigColorTableViewCellIdentifier: String = "PDConfigColorTableViewCell"
+fileprivate let pdConfigSizeTableViewCellIdentifier: String = "PDConfigSizeTableViewCell"
 
 enum PDConfigSelectionViewCellHeight: CGFloat {
   case color = 200
@@ -48,6 +49,7 @@ class PDConfigSelectionView: BaseView {
 
   func setupView() {
     self.tableView?.registerXib(name: pdConfigColorTableViewCellIdentifier)
+    self.tableView?.registerXib(name: pdConfigSizeTableViewCellIdentifier)
   }
 
   // MARK: - IBActions
@@ -68,35 +70,45 @@ extension PDConfigSelectionView: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch indexPath.section {
-    case 0:
+    let config: ConfigurableAttributeModel = self.configs[indexPath.section]
+    guard let code = config.code else { return UITableViewCell() }
+    switch code {
+    case .color:
       if let cell: PDConfigColorTableViewCell = tableView.dequeueReusableCell(withIdentifier: pdConfigColorTableViewCellIdentifier, for: indexPath) as? PDConfigColorTableViewCell {
-        let config = self.configs[indexPath.row]
+        cell.delegate = self
         cell.options = config.options
         return cell
       }
-    default:
+    case .sizeCode:
+      if let cell: PDConfigSizeTableViewCell = tableView.dequeueReusableCell(withIdentifier: pdConfigSizeTableViewCellIdentifier, for: indexPath) as? PDConfigSizeTableViewCell {
+        cell.delegate = self
+        cell.options = config.options
+        return cell
+      }
       break
     }
     return UITableViewCell()
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    switch indexPath.section {
-    case 0:
+    let config: ConfigurableAttributeModel = self.configs[indexPath.section]
+    guard let code = config.code else { return 0 }
+    switch code {
+    case .color:
       return PDConfigSelectionViewCellHeight.color[]
-    case 1:
+    case .sizeCode:
       return PDConfigSelectionViewCellHeight.size[]
-    default:
-      return 0
     }
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let titleLabel: UILabel = {
-      let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+    let titleLabel: UILabel? = {
+      let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 20))
+      label.backgroundColor = .white
       label.font = UIFont.boldSystemFont(ofSize: 24)
-      label.text = "Test"
+      let config: ConfigurableAttributeModel = self.configs[section]
+      guard let code = config.code else { return nil }
+      label.text = code == .color ? "Choose Color" : "Choose Size"
       return label
     }()
     return titleLabel
@@ -109,10 +121,16 @@ extension PDConfigSelectionView: UITableViewDelegate, UITableViewDataSource {
       footerView.backgroundColor = .clear
       return footerView
     }
-    return nil
+    return UIView(frame: CGRect.zero)
   }
 
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    return ProductDetailHeights.footerView[]
+    return section == self.configs.count - 1 ? ProductDetailHeights.footerView[] : 0
+  }
+}
+
+extension PDConfigSelectionView: PDConfigColorTableViewCellDelegate, PDConfigSizeTableViewCellDelegate {
+  func didOptionSelected(option: OptionModel) {
+    self.delegate?.didSelectedAnyOption(option: option)
   }
 }
