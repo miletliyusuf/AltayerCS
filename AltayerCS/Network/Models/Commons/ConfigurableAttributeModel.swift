@@ -8,12 +8,12 @@ enum ConfigCode: String {
 class ConfigurableAttributeModel: BaseModel {
 
   var code: ConfigCode?
-  var option: OptionModel?
+  var options: [OptionModel]?
 
   override func mapping(map: Map) {
     super.mapping(map: map)
 
     code <- map["code"]
-    option <- map["option"]
+    options <- map["options"]
   }
 }

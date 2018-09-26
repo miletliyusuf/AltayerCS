@@ -22,6 +22,12 @@
 		881C9E19215ACF6F00893E8C /* PDAddToBagFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E18215ACF6F00893E8C /* PDAddToBagFooterView.swift */; };
 		881C9E1B215AD32A00893E8C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E1A215AD32A00893E8C /* BaseView.swift */; };
 		881C9E1D215AD44100893E8C /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E1C215AD44100893E8C /* ProductDetailViewModel.swift */; };
+		881C9E4C215AF0D500893E8C /* PDConfigSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881C9E4B215AF0D500893E8C /* PDConfigSelectionView.xib */; };
+		881C9E4E215AF0E200893E8C /* PDConfigSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E4D215AF0E200893E8C /* PDConfigSelectionView.swift */; };
+		881C9E51215B09DA00893E8C /* PDConfigColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881C9E50215B09DA00893E8C /* PDConfigColorTableViewCell.xib */; };
+		881C9E53215B09E400893E8C /* PDConfigColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E52215B09E400893E8C /* PDConfigColorTableViewCell.swift */; };
+		881C9E56215B0E9200893E8C /* PDConfigColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881C9E55215B0E9200893E8C /* PDConfigColorCollectionViewCell.xib */; };
+		881C9E58215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C9E57215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift */; };
 		889E4EE9215920240052CC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EE8215920240052CC86 /* AppDelegate.swift */; };
 		889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E4EEA215920240052CC86 /* BaseViewController.swift */; };
 		889E4EEE215920240052CC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E4EEC215920240052CC86 /* Main.storyboard */; };
@@ -88,6 +94,12 @@
 		881C9E18215ACF6F00893E8C /* PDAddToBagFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDAddToBagFooterView.swift; sourceTree = "<group>"; };
 		881C9E1A215AD32A00893E8C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		881C9E1C215AD44100893E8C /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		881C9E4B215AF0D500893E8C /* PDConfigSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDConfigSelectionView.xib; sourceTree = "<group>"; };
+		881C9E4D215AF0E200893E8C /* PDConfigSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDConfigSelectionView.swift; sourceTree = "<group>"; };
+		881C9E50215B09DA00893E8C /* PDConfigColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDConfigColorTableViewCell.xib; sourceTree = "<group>"; };
+		881C9E52215B09E400893E8C /* PDConfigColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDConfigColorTableViewCell.swift; sourceTree = "<group>"; };
+		881C9E55215B0E9200893E8C /* PDConfigColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDConfigColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		881C9E57215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDConfigColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		889E4EE5215920240052CC86 /* AltayerCS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltayerCS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E4EE8215920240052CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889E4EEA215920240052CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 		881C9E0A215AC4DE00893E8C /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				881C9E4A215AF0B600893E8C /* PDConfigSelectionView */,
 				881C9E05215AC32D00893E8C /* PDImageTableViewCell */,
 				881C9E0B215AC4F900893E8C /* PDDescriptionTableViewCell */,
 				881C9E10215AC8E500893E8C /* PDConfigAttributesTableViewCell */,
@@ -223,6 +236,35 @@
 				881C9E18215ACF6F00893E8C /* PDAddToBagFooterView.swift */,
 			);
 			path = PDAddToBagFooterView;
+			sourceTree = "<group>";
+		};
+		881C9E4A215AF0B600893E8C /* PDConfigSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				881C9E4B215AF0D500893E8C /* PDConfigSelectionView.xib */,
+				881C9E4D215AF0E200893E8C /* PDConfigSelectionView.swift */,
+				881C9E4F215B09BB00893E8C /* PDConfigColorTableViewCell */,
+				881C9E54215B0E7800893E8C /* PDConfigColorCollectionViewCell */,
+			);
+			path = PDConfigSelectionView;
+			sourceTree = "<group>";
+		};
+		881C9E4F215B09BB00893E8C /* PDConfigColorTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				881C9E50215B09DA00893E8C /* PDConfigColorTableViewCell.xib */,
+				881C9E52215B09E400893E8C /* PDConfigColorTableViewCell.swift */,
+			);
+			path = PDConfigColorTableViewCell;
+			sourceTree = "<group>";
+		};
+		881C9E54215B0E7800893E8C /* PDConfigColorCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				881C9E55215B0E9200893E8C /* PDConfigColorCollectionViewCell.xib */,
+				881C9E57215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift */,
+			);
+			path = PDConfigColorCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		889E4EDC215920240052CC86 = {
@@ -513,7 +555,10 @@
 				889E4EF0215920250052CC86 /* Assets.xcassets in Resources */,
 				881C9E07215AC34B00893E8C /* PDImageTableViewCell.xib in Resources */,
 				889E4F49215970320052CC86 /* ProductCollectionViewCell.xib in Resources */,
+				881C9E4C215AF0D500893E8C /* PDConfigSelectionView.xib in Resources */,
 				881C9E13215ACA5200893E8C /* PDConfigAttributesTableViewCell.xib in Resources */,
+				881C9E51215B09DA00893E8C /* PDConfigColorTableViewCell.xib in Resources */,
+				881C9E56215B0E9200893E8C /* PDConfigColorCollectionViewCell.xib in Resources */,
 				889E4EEE215920240052CC86 /* Main.storyboard in Resources */,
 				881C9E0D215AC51F00893E8C /* PDDescriptionTableViewCell.xib in Resources */,
 			);
@@ -628,11 +673,14 @@
 				889E4F1E2159227B0052CC86 /* ProductDetailViewController.swift in Sources */,
 				889E4F46215966B00052CC86 /* CarouselModel.swift in Sources */,
 				889E4F2721592DF10052CC86 /* BaseRequest.swift in Sources */,
+				881C9E4E215AF0E200893E8C /* PDConfigSelectionView.swift in Sources */,
 				889E4F38215953AB0052CC86 /* BaseModel.swift in Sources */,
+				881C9E53215B09E400893E8C /* PDConfigColorTableViewCell.swift in Sources */,
 				889E4F32215945230052CC86 /* ProductsDataService.swift in Sources */,
 				881C9E1D215AD44100893E8C /* ProductDetailViewModel.swift in Sources */,
 				881C9E1B215AD32A00893E8C /* BaseView.swift in Sources */,
 				881C9E002159758000893E8C /* Extensions.swift in Sources */,
+				881C9E58215B0EA000893E8C /* PDConfigColorCollectionViewCell.swift in Sources */,
 				889E4EEB215920240052CC86 /* BaseViewController.swift in Sources */,
 				889E4F362159537E0052CC86 /* ProductModel.swift in Sources */,
 				889E4F3C21595FCD0052CC86 /* MediaModel.swift in Sources */,

@@ -62,17 +62,30 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Var-oG-PD9" customClass="PDConfigSelectionView" customModule="AltayerCS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="717" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="HmP-b3-dsj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SaN-Hm-Cdi" firstAttribute="top" secondItem="zwc-jq-8aV" secondAttribute="top" id="4W6-Qb-yH7"/>
                             <constraint firstItem="zwc-jq-8aV" firstAttribute="trailing" secondItem="SaN-Hm-Cdi" secondAttribute="trailing" id="7xe-AS-5ao"/>
+                            <constraint firstItem="zwc-jq-8aV" firstAttribute="trailing" secondItem="Var-oG-PD9" secondAttribute="trailing" id="QsW-zV-ot5"/>
                             <constraint firstItem="zwc-jq-8aV" firstAttribute="bottom" secondItem="SaN-Hm-Cdi" secondAttribute="bottom" id="RCD-eV-eOK"/>
+                            <constraint firstItem="zwc-jq-8aV" firstAttribute="bottom" secondItem="Var-oG-PD9" secondAttribute="bottom" constant="-300" id="cfa-85-cjD"/>
                             <constraint firstItem="SaN-Hm-Cdi" firstAttribute="leading" secondItem="zwc-jq-8aV" secondAttribute="leading" id="ndS-64-WXx"/>
+                            <constraint firstItem="Var-oG-PD9" firstAttribute="leading" secondItem="zwc-jq-8aV" secondAttribute="leading" id="xv8-fk-QQN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zwc-jq-8aV"/>
                     </view>
                     <connections>
+                        <outlet property="configSelectionView" destination="Var-oG-PD9" id="OqQ-is-hcY"/>
+                        <outlet property="configSelectionViewBottomConstraint" destination="cfa-85-cjD" id="2tw-qY-CPg"/>
+                        <outlet property="configSelectionViewHeightConstraint" destination="HmP-b3-dsj" id="qdw-tP-MBH"/>
                         <outlet property="tableView" destination="SaN-Hm-Cdi" id="H5D-kU-8Vd"/>
                     </connections>
                 </viewController>

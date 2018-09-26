@@ -9,6 +9,13 @@ class ProductDetailViewController: BaseViewController {
       self.tableView?.dataSource = self
     }
   }
+  @IBOutlet weak var configSelectionView: PDConfigSelectionView? {
+    didSet {
+      self.configSelectionView?.delegate = self
+    }
+  }
+  @IBOutlet weak var configSelectionViewHeightConstraint: NSLayoutConstraint?
+  @IBOutlet weak var configSelectionViewBottomConstraint: NSLayoutConstraint?
 
   var product: ProductModel?
 
@@ -28,15 +35,30 @@ class ProductDetailViewController: BaseViewController {
     self.tableView?.registerXib(name: self.viewModel.PDConfigAttributesTableViewCellIdentifier)
 
     self.fillHeights()
+    self.setupConfigSelectionView()
   }
 
   func fillHeights() {
     self.cellHeights = [
-      0: [ self.view.frame.size.height - ProductDetailHeights.value[.configCell],
-           ProductDetailHeights.value[.descriptionCell],
-           ProductDetailHeights.value[.configCell],
+      0: [ self.view.frame.size.height - ProductDetailHeights.configCell[],
+           ProductDetailHeights.descriptionCell[],
+           ProductDetailHeights.configCell[],
       ]
     ]
+  }
+
+  func setupConfigSelectionView() {
+    guard let configs = self.product?.configurableAttributes else { return }
+    self.configSelectionView?.configs = configs
+    self.configSelectionViewHeightConstraint?.constant = CGFloat(configs.count * 150) + ProductDetailHeights.footerView[]
+  }
+
+  func willShowConfigView(status: Bool) {
+    guard let configHeightConstant = self.configSelectionViewHeightConstraint?.constant else { return }
+    UIView.animate(withDuration: 0.2) {
+      self.configSelectionViewBottomConstraint?.constant = status ? 0 : (0 - configHeightConstant)
+      self.view.layoutIfNeeded()
+    }
   }
 }
 
@@ -82,7 +104,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
 
   func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     if section == 0 {
-      let frame = CGRect(x: 0, y: 0, width: self.tableView?.frame.size.width ?? 0, height: ProductDetailHeights.value[.footerView])
+      let frame = CGRect(x: 0, y: 0, width: self.tableView?.frame.size.width ?? 0, height: ProductDetailHeights.footerView[])
       let footerView: PDAddToBagFooterView = PDAddToBagFooterView(frame: frame)
       footerView.delegate = self
       return footerView
@@ -91,17 +113,17 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
   }
 
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    return ProductDetailHeights.value[.footerView]
+    return ProductDetailHeights.footerView[]
   }
 }
 
 // MARK: - PDConfigAttributesTableViewCellDelegate
 extension ProductDetailViewController: PDConfigAttributesTableViewCellDelegate {
   func didSizeButtonTapped() {
-    print("Size")
+    self.willShowConfigView(status: true)
   }
   func didColorButtonTapped() {
-    print("Color")
+    self.willShowConfigView(status: true)
   }
 }
 
@@ -109,5 +131,16 @@ extension ProductDetailViewController: PDConfigAttributesTableViewCellDelegate {
 extension ProductDetailViewController: PDAddToBagFooterViewDelegate {
   func didAddToBagButtonTapped() {
     print("Add to bag item ->", self.product)
+  }
+}
+
+// MARK: - PDConfigSelectionViewDelegate
+extension ProductDetailViewController: PDConfigSelectionViewDelegate {
+  func didSelectedAnyOption(option: OptionModel) {
+
+  }
+
+  func didDoneButtonTapped() {
+    self.willShowConfigView(status: false)
   }
 }
