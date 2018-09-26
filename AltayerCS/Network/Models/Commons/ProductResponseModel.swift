@@ -5,13 +5,13 @@ enum Discounted: String {
   case no
 }
 
-class ProductModel: BaseModel {
+class ProductResponseModel: BaseResponse {
 
   var routeType: String?
   var productID: Int?
   var sku: String?
   var season: String?
-  var description: String?
+  var desc: String?
   var name: String?
   var atgColorCode: String?
   var countryOfOrigin: String?
@@ -55,7 +55,7 @@ class ProductModel: BaseModel {
   var areAnyOptionsInStock: Bool?
   var stockOfAllOptions: StockModel?
   var visibleSku: String?
-  var relatedProductsLookup: [String: ProductModel]?
+  var relatedProductsLookup: [String: ProductResponseModel]?
   var amberPointsPerItem: Int?
   var stockTriggerText: String?
   var staticInfo: String?
@@ -68,14 +68,14 @@ class ProductModel: BaseModel {
   var specialPrice: Int?
   var stdSizeCode: String?
 
-  override func mapping(map: Map) {
-    super.mapping(map: map)
+  required init?(map: Map) {
+    super.init(map: map)
 
     routeType <- map["routeType"]
     productID <- map["productID"]
     sku <- map["sku"]
     season <- map["season"]
-    description <- map["description"]
+    desc <- map["description"]
     name <- map["name"]
     atgColorCode <- map["atgColorCode"]
     countryOfOrigin <- map["countryOfOrigin"]
@@ -131,5 +131,9 @@ class ProductModel: BaseModel {
     carousels <- map["carousels"]
     specialPrice <- map["specialPrice"]
     stdSizeCode <- map["stdSizeCode"]
+  }
+
+  override class func newInstance(_ jsonString: String)-> AnyObject? {
+    return Mapper<ProductResponseModel>().map(JSONString: jsonString)
   }
 }

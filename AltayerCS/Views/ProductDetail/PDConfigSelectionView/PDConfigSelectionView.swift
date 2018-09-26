@@ -15,7 +15,7 @@ enum PDConfigSelectionViewCellHeight: CGFloat {
 }
 
 protocol PDConfigSelectionViewDelegate {
-  func didSelectedAnyOption(option: OptionModel)
+  func didSelectedAnyOption(option: OptionModel, key: ConfigCode)
   func didDoneButtonTapped()
 }
 
@@ -130,7 +130,7 @@ extension PDConfigSelectionView: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PDConfigSelectionView: PDConfigColorTableViewCellDelegate, PDConfigSizeTableViewCellDelegate {
-  func didOptionSelected(option: OptionModel) {
-    self.delegate?.didSelectedAnyOption(option: option)
+  func didOptionSelected(option: OptionModel, key: ConfigCode) {
+    self.delegate?.didSelectedAnyOption(option: option, key: key)
   }
 }

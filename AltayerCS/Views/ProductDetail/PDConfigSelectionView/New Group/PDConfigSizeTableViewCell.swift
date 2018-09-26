@@ -4,7 +4,7 @@ import UIKit
 private let pdConfigSizeCollectionViewCellIdentifier: String = "PDConfigSizeCollectionViewCell"
 
 protocol PDConfigSizeTableViewCellDelegate {
-  func didOptionSelected(option: OptionModel)
+  func didOptionSelected(option: OptionModel, key: ConfigCode)
 }
 
 class PDConfigSizeTableViewCell: UITableViewCell {
@@ -55,6 +55,6 @@ extension PDConfigSizeTableViewCell: UICollectionViewDelegate, UICollectionViewD
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     // Set selection
     guard let option: OptionModel = self.options?[indexPath.row] else { return }
-    self.delegate?.didOptionSelected(option: option)
+    self.delegate?.didOptionSelected(option: option, key: .sizeCode)
   }
 }

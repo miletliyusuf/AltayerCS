@@ -13,7 +13,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
   /// Sets cell UI for given data
   ///
   /// - Parameter data: ProductModel
-  func setData(for data: ProductModel) {
+  func setData(for data: ProductResponseModel) {
     if let imageUrlSuffix = data.image {
       self.imageView?.kf.setImage(with: URL.init(string: Config.listingImageBaseUrl + imageUrlSuffix))
     }
@@ -22,7 +22,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     self.setDiscountBadgeAndPriceLabel(with: data)
   }
 
-  func setDiscountBadgeAndPriceLabel(with data: ProductModel) {
+  func setDiscountBadgeAndPriceLabel(with data: ProductResponseModel) {
     self.discountLabel?.isHidden = data.discounted == .no
 
     if let discountBadge: BadgeModel = data.badges?.filter({ $0.name == "discount" }).first,

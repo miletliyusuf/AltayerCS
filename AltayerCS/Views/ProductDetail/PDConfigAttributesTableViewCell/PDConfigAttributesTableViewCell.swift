@@ -16,18 +16,23 @@ class PDConfigAttributesTableViewCell: UITableViewCell {
   var delegate: PDConfigAttributesTableViewCellDelegate? = nil
 
   // MARK: - Custom Methods
-  func setData(for product: ProductModel?) {
+  func setData(for product: ProductResponseModel?, selectedOption: OptionModel?, key: ConfigCode?) {
 //    self.colorView?.backgroundColor = product?.colorId // I guess it should request somewhere with this id.
     self.colorLabel?.text = product?.color
     self.colorSelectionButton?.isUserInteractionEnabled = self.isColorSelectionEnable(for: product)
     self.sizeSelectionButton?.isUserInteractionEnabled = self.isSizeSelectionEnable(for: product)
+    if let key: ConfigCode = key,
+      key == .sizeCode,
+      let option: OptionModel = selectedOption {
+      self.chooseLabel?.text = option.label
+    }
   }
 
-  func isColorSelectionEnable(for product: ProductModel?) -> Bool {
+  func isColorSelectionEnable(for product: ProductResponseModel?) -> Bool {
     return product?.configurableAttributes?.contains(where: { $0.code == ConfigCode.color }) ?? false
   }
 
-  func isSizeSelectionEnable(for product: ProductModel?) -> Bool {
+  func isSizeSelectionEnable(for product: ProductResponseModel?) -> Bool {
     return product?.configurableAttributes?.contains(where: { $0.code == ConfigCode.sizeCode }) ?? false
   }
 

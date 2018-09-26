@@ -17,7 +17,9 @@ class ProductDetailViewController: BaseViewController {
   @IBOutlet weak var configSelectionViewHeightConstraint: NSLayoutConstraint?
   @IBOutlet weak var configSelectionViewBottomConstraint: NSLayoutConstraint?
 
-  var product: ProductModel?
+  var product: ProductResponseModel?
+  var selectedOption: OptionModel?
+  var selectedOptionKey: ConfigCode?
 
   let viewModel: ProductDetailViewModel = ProductDetailViewModel()
   var cellHeights: [Int: [CGFloat]] = [:]
@@ -36,6 +38,21 @@ class ProductDetailViewController: BaseViewController {
 
     self.fillHeights()
     self.setupConfigSelectionView()
+  }
+
+  func fetchProduct(for option: OptionModel) {
+    let r: ProductRequest = ProductRequest()
+    r.slug = option.simpleProductSkus?.first
+    _ = ProductsDataService.product(req: r).subscribe(onNext: { (response) in
+      if let res: ProductResponseModel = response as? ProductResponseModel,
+        let configs: [ConfigurableAttributeModel] = res.configurableAttributes {
+        self.product = res
+        self.tableView?.reloadData()
+        self.configSelectionView?.configs = configs
+      }
+    }, onError: { (error) in
+
+    })
   }
 
   func fillHeights() {
@@ -87,7 +104,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
       } else {
         if let cell: PDConfigAttributesTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.PDConfigAttributesTableViewCellIdentifier, for: indexPath) as? PDConfigAttributesTableViewCell {
           cell.delegate = self
-          cell.setData(for: self.product)
+          cell.setData(for: self.product, selectedOption: self.selectedOption, key: self.selectedOptionKey)
           return cell
         }
       }
@@ -136,8 +153,10 @@ extension ProductDetailViewController: PDAddToBagFooterViewDelegate {
 
 // MARK: - PDConfigSelectionViewDelegate
 extension ProductDetailViewController: PDConfigSelectionViewDelegate {
-  func didSelectedAnyOption(option: OptionModel) {
-    print(option)
+  func didSelectedAnyOption(option: OptionModel, key: ConfigCode) {
+    self.selectedOption = option
+    self.selectedOptionKey = key
+    self.fetchProduct(for: option)
   }
 
   func didDoneButtonTapped() {

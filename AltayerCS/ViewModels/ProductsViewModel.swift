@@ -25,7 +25,7 @@ class ProductsViewModel {
   ///   - instant: Products that collectionView already contains.
   ///   - hits: Products which about to insert.
   /// - Returns: Corresponding indexpaths.
-  func getIndexPaths(for instant: [ProductModel], in hits: [ProductModel]) -> [IndexPath] {
+  func getIndexPaths(for instant: [ProductResponseModel], in hits: [ProductResponseModel]) -> [IndexPath] {
     var indexPaths = [IndexPath]()
     for i in (hits.count)...(hits.count + instant.count - 1) {
       indexPaths.append(IndexPath(row: i, section: 0))

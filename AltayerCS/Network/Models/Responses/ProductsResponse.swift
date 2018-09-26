@@ -2,7 +2,7 @@ import ObjectMapper
 
 class ProductsResponse: BaseResponse {
 
-  var hits: [ProductModel]?
+  var hits: [ProductResponseModel]?
   var pagination: PaginationModel?
 
   required init?(map: Map) {

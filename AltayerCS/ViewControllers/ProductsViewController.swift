@@ -17,7 +17,7 @@ class ProductsViewController: BaseViewController {
   let viewModel: ProductsViewModel = ProductsViewModel()
 
   var page: Int = 0
-  var hits: [ProductModel] = [ProductModel]()
+  var hits: [ProductResponseModel] = [ProductResponseModel]()
   var pagination: PaginationModel?
 
   override func viewDidLoad() {
@@ -64,7 +64,7 @@ class ProductsViewController: BaseViewController {
   /// - Parameters:
   ///   - page: Current page number
   ///   - data: Instant products data
-  func reloadCollectionView(for page: Int, hits: [ProductModel], completion: @escaping () -> ()) {
+  func reloadCollectionView(for page: Int, hits: [ProductResponseModel], completion: @escaping () -> ()) {
     // Will force a recalculation and adjust the sizing of it's elements.
     self.collectionView?.invalidateIntrinsicContentSize()
     self.page = page
@@ -91,7 +91,7 @@ class ProductsViewController: BaseViewController {
     r.page = page
     _ = ProductsDataService.products(req: r).subscribe(onNext: { (response) in
       if let res = response as? ProductsResponse,
-        let hits: [ProductModel] = res.hits,
+        let hits: [ProductResponseModel] = res.hits,
         let pagination = res.pagination {
         self.pagination = pagination
         self.reloadCollectionView(for: page, hits: hits, completion: {
@@ -121,7 +121,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if let cell: ProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.viewModel.productCellIdentifierId, for: indexPath) as? ProductCollectionViewCell {
-      let hit: ProductModel = self.hits[indexPath.row]
+      let hit: ProductResponseModel = self.hits[indexPath.row]
       cell.setData(for: hit)
       return cell
     }

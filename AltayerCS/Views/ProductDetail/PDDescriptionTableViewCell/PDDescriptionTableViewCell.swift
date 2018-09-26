@@ -9,7 +9,7 @@ class PDDescriptionTableViewCell: UITableViewCell {
   @IBOutlet weak var vatInfoLabel: UILabel?
 
   // MARK: - Custom Methods
-  func setData(for product: ProductModel?) {
+  func setData(for product: ProductResponseModel?) {
     self.designerCategoryNameLabel?.text = product?.designerCategoryName
     self.nameLabel?.text = product?.name
 //    self.priceLabel

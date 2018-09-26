@@ -4,7 +4,7 @@ import UIKit
 fileprivate let pdConfigColorCollectionViewCellIdentifier = "PDConfigColorCollectionViewCell"
 
 protocol PDConfigColorTableViewCellDelegate {
-  func didOptionSelected(option: OptionModel)
+  func didOptionSelected(option: OptionModel, key: ConfigCode)
 }
 
 class PDConfigColorTableViewCell: UITableViewCell {
@@ -56,6 +56,6 @@ extension PDConfigColorTableViewCell: UICollectionViewDelegate, UICollectionView
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     // Set selection
     guard let option: OptionModel = self.options?[indexPath.row] else { return }
-    self.delegate?.didOptionSelected(option: option)
+    self.delegate?.didOptionSelected(option: option, key: .color)
   }
 }
