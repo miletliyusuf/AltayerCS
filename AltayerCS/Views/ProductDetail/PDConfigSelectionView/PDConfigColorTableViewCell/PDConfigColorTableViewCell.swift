@@ -48,6 +48,8 @@ extension PDConfigColorTableViewCell: UICollectionViewDelegate, UICollectionView
       if let selectedOption = self.selectedOption {
         let isSelected: Bool = selectedOption == option && option.isInStock == true
         cell.layer.borderColor = isSelected ? UIColor.green.cgColor : UIColor.clear.cgColor
+      } else {
+        cell.layer.borderColor = UIColor.black.cgColor
       }
       return cell
     }

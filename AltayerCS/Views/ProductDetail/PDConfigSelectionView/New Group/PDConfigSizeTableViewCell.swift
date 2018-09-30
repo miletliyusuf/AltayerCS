@@ -47,6 +47,8 @@ extension PDConfigSizeTableViewCell: UICollectionViewDelegate, UICollectionViewD
       if let selectedOption = self.selectedOption {
         let isSelected = selectedOption == option && option.isInStock == true
         cell.layer.borderColor = isSelected ? UIColor.green.cgColor : UIColor.black.cgColor
+      } else {
+        cell.layer.borderColor = UIColor.black.cgColor
       }
       return cell
     }

@@ -3,6 +3,15 @@ import ObjectMapper
 enum ConfigCode: String {
   case sizeCode
   case color
+
+  func humanReadableValue() -> String {
+    switch self {
+    case .sizeCode:
+      return "Size"
+    case .color:
+      return "Color"
+    }
+  }
 }
 
 class ConfigurableAttributeModel: BaseModel {

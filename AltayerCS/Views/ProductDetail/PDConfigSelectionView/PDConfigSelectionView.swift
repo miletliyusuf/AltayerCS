@@ -93,6 +93,19 @@ class PDConfigSelectionView: BaseView {
     return true
   }
 
+  /// Checks bag if there is same product, updates quantity else add new item.
+  func addProductOrUpdateBag() {
+    let bagItem = BagModel(product: self.product, attributes: self.selectedConfigs, quantity: 1)
+    if let product: BagModel = BagProvider.shared.basket.filter({ $0 == bagItem }).first,
+      let quantity = product.quantity {
+      if let index = BagProvider.shared.basket.firstIndex(where: { $0 == bagItem }) {
+        BagProvider.shared.basket[index].quantity = quantity + 1
+      }
+    } else {
+      BagProvider.shared.basket.append(bagItem)
+    }
+  }
+
   // MARK: - IBActions
   @IBAction func didDoneButtonTapped(_ sender: UIButton) {
     self.delegate?.didDoneButtonTapped()
@@ -117,12 +130,14 @@ extension PDConfigSelectionView: UITableViewDelegate, UITableViewDataSource {
     case .color:
       if let cell: PDConfigColorTableViewCell = tableView.dequeueReusableCell(withIdentifier: pdConfigColorTableViewCellIdentifier, for: indexPath) as? PDConfigColorTableViewCell {
         cell.delegate = self
+        cell.selectedOption = self.selectedConfigs.filter({ $0.code == ConfigCode.color }).first?.options?.first
         cell.options = config.options
         return cell
       }
     case .sizeCode:
       if let cell: PDConfigSizeTableViewCell = tableView.dequeueReusableCell(withIdentifier: pdConfigSizeTableViewCellIdentifier, for: indexPath) as? PDConfigSizeTableViewCell {
         cell.delegate = self
+        cell.selectedOption = self.selectedConfigs.filter({ $0.code == ConfigCode.sizeCode }).first?.options?.first
         cell.options = config.options
         return cell
       }
@@ -182,10 +197,10 @@ extension PDConfigSelectionView: PDConfigColorTableViewCellDelegate, PDConfigSiz
 extension PDConfigSelectionView: PDAddToBagFooterViewDelegate {
   func didAddToBagButtonTapped() {
     if self.canAddToBag() {
-      let bagModel = BagModel(product: self.product, attributes: self.selectedConfigs, quantity: 1)
-      BagProvider.shared.basket.append(bagModel)
+      self.addProductOrUpdateBag()
       self.delegate?.didAddToBagButtonTappedFromConfigSelection(status: true)
       self.selectedConfigs = [ConfigurableAttributeModel]()
+      self.tableView?.reloadData()
     } else {
       self.delegate?.didAddToBagButtonTappedFromConfigSelection(status: false)
     }

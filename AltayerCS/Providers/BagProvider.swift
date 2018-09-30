@@ -6,7 +6,13 @@ class BagProvider {
 
   var basket: [BagModel] = [BagModel]() {
     didSet {
-      self.badgeCount.onNext(basket.count)
+      var quantities = 0
+      for item in self.basket {
+        if let quantity = item.quantity {
+          quantities += quantity
+        }
+      }
+      self.badgeCount.onNext(quantities)
     }
   }
   var badgeCount = BehaviorSubject<Int>(value: 0)
